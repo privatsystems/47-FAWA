@@ -1,0 +1,6 @@
+{
+  "modules": {
+    "core": "https://github.com/getkirby/kirby.git",
+    "plugins": {}
+  }
+}

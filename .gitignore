@@ -1,0 +1,12 @@
+/BACK/node_modules
+/BACK/scripts
+/BACK/site
+/BACK/vendor
+/BACK/src
+/BACK/www/media
+/BACK/www/kirby
+/BACK/www/assets/images
+/BACK/www/assets/fonts
+
+/front/node_modules
+/front/fawa/node_modules
