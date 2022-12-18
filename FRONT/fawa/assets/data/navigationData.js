@@ -8,13 +8,13 @@ export const navigationData = [
     },
     {
         index: 2,
-        name: 'Le Restaurant',
+        name: 'Le&nbsp;Restaurant',
         color: '#83CFFF',
         back: '#3C2109'
     },
     {
         index: 3,
-        name: 'Evenements',
+        name: 'Les&nbsp;Évenements',
         color: '#FFFF4A',
         back: '#FF4500'
     },

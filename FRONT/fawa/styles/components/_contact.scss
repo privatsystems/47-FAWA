@@ -1,14 +1,28 @@
 .contacts {
 
-    .content {
+    &_content {
 
         margin: 25px;
         color: $marron;
 
-        &_text {
+        @include sizeone {
+
+            margin: 20px;
+            margin-top: 30px;
+
+        }
+
+        .content_text {
 
             display: flex;
             margin-top: 25px;
+
+            @include sizeone {
+
+                flex-direction: column;
+                margin-top: 20px;
+
+            }
 
             div {
 
@@ -17,6 +31,12 @@
                 p {
 
                     margin-bottom: 25px;
+
+                    @include sizeone {
+
+                        margin-bottom: 20px;
+        
+                    }
 
                 }
 

@@ -51,9 +51,8 @@ const Item = ({ item, count, setCount, index }) => {
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
     onClick={handleClick}
-    >
-        {item.name}
-    </div>
+    dangerouslySetInnerHTML={{ __html: item.name }}
+    ></div>
 
 }
 export default Item

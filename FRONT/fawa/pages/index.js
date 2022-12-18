@@ -25,9 +25,11 @@ export default function Home({ data }) {
 
   const partsArray = navigationData
 
+  const mob = true
+
   useEffect(() => {
 
-    window.addEventListener('scroll', handleResize)
+    window.addEventListener('scroll', handleScroll)
 
   })
 
@@ -35,7 +37,7 @@ export default function Home({ data }) {
     setHeight(window.innerHeight)
   })
 
-  const handleResize = () => {
+  const handleScroll = () => {
 
     const windowHeight = window.innerHeight
 
@@ -69,7 +71,7 @@ export default function Home({ data }) {
 
     }
 
-    window.removeEventListener('scroll', handleResize)
+    window.removeEventListener('scroll', handleScroll)
 
   }
 
@@ -87,8 +89,9 @@ export default function Home({ data }) {
                 <div 
                 className="sub_wrapper"
                 style= {{
-                  transform: `scaleY(${(topTopH - wHeight) / wHeight * -1})`,
+                  transform: mob ? `scaleY(${(topTopH - wHeight) / wHeight * -1 * 4})` :`scaleY(${(topTopH - wHeight) / wHeight * -1})`,
                   transformOrigin: '50% 0% 0px',
+                  height: '25.7vh'
                 }}
                 >
                   <div><Fa /></div>
@@ -105,8 +108,9 @@ export default function Home({ data }) {
                 <div 
                 className="sub_wrapper"
                 style={{
-                  transform: `scaleY(${(bottomTopH - wHeight) / wHeight * -1})`,
-                  transformOrigin: '50% 100% 0px',
+                  transform: mob ? `scaleY(${(bottomTopH - wHeight) / wHeight * -1 * 4})` :`scaleY(${(bottomTopH - wHeight) / wHeight * -1})`,
+                  height: '25.7vh',
+                  transformOrigin: mob ? '100% 100% 0px' : '50% 0% 0px',
                 }}>
                   <div><Fa /></div>
                   <div><Wa /></div>

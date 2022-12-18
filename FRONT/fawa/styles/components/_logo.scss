@@ -17,3 +17,14 @@
     }
 
 }
+
+.part.bot .sub_wrapper{
+
+    @include sizeone {
+
+        top: unset;
+        bottom: 0px;
+
+    }
+
+}

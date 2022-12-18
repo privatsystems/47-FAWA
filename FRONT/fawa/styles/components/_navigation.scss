@@ -8,6 +8,12 @@
     margin: 5px;
     flex-direction: column;
 
+    @include sizeone {
+
+        flex-wrap: wrap;
+
+    }
+
     &_item {
 
         padding: 4px 7px;
@@ -22,6 +28,12 @@
     .links, .parts {
 
         display: flex;
+
+        @include sizeone {
+
+            flex-wrap: wrap;
+    
+        }
 
     }
 

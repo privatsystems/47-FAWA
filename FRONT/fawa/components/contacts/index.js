@@ -12,7 +12,7 @@ const Contacts = ({ data }) => {
             })}
         </div>
 
-        <div className='content'>
+        <div className='contacts_content'>
             <h3>Contactez Nous !</h3>
             <div className='content_text'>
                 <div>

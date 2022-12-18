@@ -11,16 +11,16 @@
     --interligne : 1.2;
     --interlettrage_small : 0.1px;
 
-    // @include sizeone {
+    @include sizeone {
 
-    //     --size_h2 : 9vw;
-    //     --size_h3 : 20.5px;
-    //     --size_onglet : 22px;
-    //     --size_courant: 14.2px;
-    //     --size_intro: 14.5px;
-    //     --size_footer: 9px;
+        --size_big : 1.5rem;
+        --size_med : 1rem;
+        --size_courant : 0.95rem;
 
-    // }
+        --interligne : 1.2;
+        --interlettrage_small : 0.1px;
+
+    }
 
     // legal
 

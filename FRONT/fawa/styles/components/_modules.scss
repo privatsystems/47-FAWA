@@ -1,12 +1,25 @@
 .content {
 
     margin: 50px 0px;
-    background-color: white;;
+    background-color: white;
+
+    @include sizeone {
+
+        margin: 20px  0px
+
+    }
 
     .buble_text {
     
         width: calc(100% - 60px);
         margin: 40px 0px;
+
+        @include sizeone {
+
+            width: calc(100% - 25px);
+            margin: 35px 0px;
+
+        }
     
         p {
 
@@ -29,6 +42,22 @@
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
             filter: url('#instagram');
+
+            @include sizeone {
+
+                margin: 0px 24px;
+
+            }
+        }
+
+        &:last-child {
+
+            @include sizeone {
+
+                margin-bottom: 10px;
+
+            }
+
         }
     
     }
@@ -40,9 +69,23 @@
         width: calc(100% - 26px);
         margin: 0px 13px;
 
+        @include sizeone {
+
+            flex-direction: column;
+
+        }
+
         .illustration_wrapper {
 
             padding: 13px;
+
+            @include sizeone {
+
+                width: 100%!important;
+                padding: 0px 3px;
+                margin-top: 20px!important;
+    
+            }
 
             img {
 
@@ -59,6 +102,12 @@
             p {
 
                 margin-top: 20px;
+
+                @include sizeone {
+
+                    margin-top: 15px;
+
+                }
 
             }
 
