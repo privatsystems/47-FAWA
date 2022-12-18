@@ -180,7 +180,7 @@ $data = [
         'bubbles' => $contact_bubles,
         'emails' => $contact_email,
         'text' => $site->contact_part_three()->value()
-    ],
+    ]
 ];
 
 

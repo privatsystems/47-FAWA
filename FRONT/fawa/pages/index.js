@@ -134,7 +134,7 @@ export const getServerSideProps = async () => {
     // const site = await axios.get(`http://localhost:8080/${locale}/home.json`)
     const site = await axios.get(`https://fawa.privat.systems/home.json`)
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data.json())
         return response.data
     })
 
