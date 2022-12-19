@@ -36,9 +36,11 @@ export default function Home({ data }) {
 
   useEffect(() => {
 
-    window?.innerHeight < 800
+    window?.innerWidth < 800
     ? setMob(true)
     : setMob(false)
+
+    console.log(window?.innerHeight, mob)
 
   }, [])
 
@@ -100,7 +102,7 @@ export default function Home({ data }) {
                 style= {{
                   transform: mob ? `scaleY(${(topTopH - wHeight) / wHeight * -1 * 4})` :`scaleY(${(topTopH - wHeight) / wHeight * -1})`,
                   transformOrigin: '50% 0% 0px',
-                  height: '25.7vh'
+                  height: mob ? '25.7vh': '100vh',
                 }}
                 >
                   <div><Fa /></div>
@@ -118,8 +120,8 @@ export default function Home({ data }) {
                 className="sub_wrapper"
                 style={{
                   transform: mob ? `scaleY(${(bottomTopH - wHeight) / wHeight * -1 * 4})` :`scaleY(${(bottomTopH - wHeight) / wHeight * -1})`,
-                  height: '25.7vh',
-                  transformOrigin: mob ? '100% 100% 0px' : '50% 0% 0px',
+                  height: mob ? '25.7vh': '100vh',
+                  transformOrigin: mob ? '100% 100% 0px' : '50% 100% 0px',
                 }}>
                   <div><Fa /></div>
                   <div><Wa /></div>
