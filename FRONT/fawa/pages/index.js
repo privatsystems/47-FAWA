@@ -25,13 +25,22 @@ export default function Home({ data }) {
 
   const partsArray = navigationData
 
-  const mob = true
+
+  const [mob, setMob] = useState(false)
 
   useEffect(() => {
 
     window.addEventListener('scroll', handleScroll)
 
   })
+
+  useEffect(() => {
+
+    window?.innerHeight < 800
+    ? setMob(true)
+    : setMob(false)
+
+  }, [])
 
   useEffect(() => {
     setHeight(window.innerHeight)
