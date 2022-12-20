@@ -8,7 +8,7 @@ export const navigationData = [
     },
     {
         index: 2,
-        slug: 'restaurant',
+        slug: 'restaurdant',
         name: 'Le&nbsp;Restaurant',
         color: '#83CFFF',
         back: '#3C2109'
