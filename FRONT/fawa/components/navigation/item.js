@@ -22,27 +22,34 @@ const Item = ({ item, count, setCount, index }) => {
 
     const handleClick = () => {
 
+        const section = document.querySelector(`.part_content[data-ind='${index + 1}'`)
+        let offset
+        index + 1 == 1
+        ? offset = 30
+        : offset = -510
+
         const tl = gsap.timeline()
         .to(window, {
             duration: 0.5,
-            scrollTo: 3,
+            scrollTo: {y:section, offsetY: offset},
             ease: 'Power3.in',
             onComplete:(() => { setCount(index + 1) })
         })
-        .to(window, {
-            duration: 0.5,
-            scrollTo: window.innerHeight,
-            ease: 'Power3.in'
-        })
+        // .to(window, {
+        //     duration: 0.5,
+        //     scrollTo: window.innerHeight,
+        //     ease: 'Power3.in'
+        // })
 
     }
 
-    const quidSelect = classNames({
-        select: count == navigationData[index].index
-    })
+    // const quidSelect = classNames({
+    //     select: count == navigationData[index].index
+    // })
 
     return <div 
-    className={`navigation_item ${quidSelect}`}
+    className='navigation_item'
+    data-menu={index}
     style={{ 
         color: count == navigationData[index].index || hover ? navigationData[count - 1].back : navigationData[count - 1].color,
         backgroundColor : count == navigationData[index].index || hover ? navigationData[count - 1].color : navigationData[count - 1].back,

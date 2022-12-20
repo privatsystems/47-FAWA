@@ -1,6 +1,4 @@
-import classNames from "class-names"
 import { useState } from "react"
-import { navigationData } from "../../assets/data/navigationData"
 
 const ItemLink = ({ color, back, label, link }) => {
 
@@ -28,7 +26,7 @@ const ItemLink = ({ color, back, label, link }) => {
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
     >
-        {label}
+        <a href={link}>{label}</a>
     </div>
 
 }

@@ -24,9 +24,9 @@ const Table = ({ table }) => {
             <div>Nom</div>
             <div>Prix</div>
         </div>
-        {table.table_content.map((line) => {
+        {table.table_content.map((line, index) => {
             return <TableLine 
-            key={line.name + line.horaire} 
+            key={line.name + line.horaire + index} 
             color={table.color} 
             back= {table.back}
             line={line} />

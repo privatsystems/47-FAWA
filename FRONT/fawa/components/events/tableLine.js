@@ -25,7 +25,7 @@ const TableLine = ({ line, color, back }) => {
 
     if(isAfter(today, dateEvent)) return
 
-    return <div 
+    return <a href={`${link}`}><div 
     className='event_table_line'
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
@@ -35,13 +35,12 @@ const TableLine = ({ line, color, back }) => {
         borderBottom: `1px solid ${color}`
     }}
     >
-        <a href={`${link}`}>
+        
             <div>{format(new Date(date), 'eeee dd MMMM', {awareOfUnicodeTokens: true, locale: fr})}</div>
             <div>{horaire}</div>
             <div>{type}</div>
             <div>{name}</div>
             <div>{prix}</div>
-        </a>
-    </div>
+    </div></a>
 }
 export default TableLine

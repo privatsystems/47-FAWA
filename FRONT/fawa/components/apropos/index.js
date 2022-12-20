@@ -5,7 +5,7 @@ const Apropos = ({ data }) => {
 
     const { bubbles, images } = data
 
-    return <div className='restaurant'>
+    return <div className='apropos'>
 
         <div className='bubles'>
             {bubbles.map((bubble, index) => {

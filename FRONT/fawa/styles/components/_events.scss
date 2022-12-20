@@ -2,6 +2,8 @@ $p100 : calc((100vw - 50px) / 100);
 
 .event {
 
+    font-size: var(--size_med);
+
     &_table {
 
         margin: 25px;

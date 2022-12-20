@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import Fa from '../components/logo/fa'
 import Wa from '../components/logo/wa'
@@ -14,9 +14,10 @@ import Contacts from '../components/contacts'
 export default function Home({ data }) {
 
   const { apropos, restaurant, events, contacts, infos } = data 
-  const [count, setCount] = useState(1)
+  const [topTopH, setTop] = useState(1)
+  const [bottomTopH, setBottom] = useState(1)
   const [wHeight, setHeight] = useState(764)
-
+  const [count, setCount] = useState(1)
 
   const content = useRef()
   const top = useRef()
@@ -24,47 +25,40 @@ export default function Home({ data }) {
 
   const partsArray = navigationData
 
-  const observer = useRef()
 
-  const options = {
-    root: null,
-    rootMargin: '100px',
-     threshold: 0.4
-}
-
-  const refSection = useCallback( 
-    (node) => {
-    observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            if(!entries[0]?.target.classList.contains('select')) {
-                console.log()
-                const index = entries[0]?.target.dataset.ind
-                document.querySelector('.part_content.select')?.classList.remove('select')
-                setCount(index)
-                document.querySelector(`.navigation_item[data-menu="${index}"]`)?.classList.add('select')
-                entries[0]?.target.classList.add('select')
-                observer.current.unobserve(node) 
-            }
-        }
-    }, options)
-    if (node) 
-        observer.current.observe(node)
-    
-  },[])
+  const [mob, setMob] = useState(false)
 
   useEffect(() => {
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  
-  }, []);
+  })
+
+  useEffect(() => {
+
+    window?.innerWidth < 800
+    ? setMob(true)
+    : setMob(false)
+
+    console.log(window?.innerHeight, mob)
+
+  }, [])
+
+  useEffect(() => {
+    setHeight(window.innerHeight)
+  })
 
   const handleScroll = () => {
 
     const windowHeight = window.innerHeight
+
+    const wrapperTop = top.current
+    const topTop = wrapperTop?.getBoundingClientRect().top * -1
+    setTop(topTop)
+
+    const wrapperBottom = bottom.current
+    const topBottom = wrapperBottom?.getBoundingClientRect().top
+    setBottom(topBottom)
 
     const container = content.current
     const scroll = container?.getBoundingClientRect().top * -1
@@ -73,31 +67,24 @@ export default function Home({ data }) {
     if(scroll >= limit - windowHeight - 2) {
 
       window.scrollTo({top: 6, left: 0})
+      count + 1 <= partsArray.length
+      ? setCount(count + 1)
+      : setCount(1)
 
     }
 
     if(scroll < 2) {
 
       window.scrollTo({top: limit - windowHeight - 6, left: 0})
+      count - 1 >= 1
+      ? setCount(count - 1)
+      : setCount(partsArray.length)
 
     }
 
+    window.removeEventListener('scroll', handleScroll)
+
   }
-
-  const [mob, setMob] = useState(false)
-
-  useEffect(() => {
-
-    window?.innerWidth < 800
-    ? setMob(true)
-    : setMob(false)
-
-  }, [])
-
-  useEffect(() => {
-    setHeight(window.innerHeight)
-  })
-
 
   return (
     <div className={styles.container}>
@@ -112,21 +99,30 @@ export default function Home({ data }) {
             <div className='part top' ref={top}>
                 <div 
                 className="sub_wrapper"
+                style= {{
+                  transform: mob ? `scaleY(${(topTopH - wHeight) / wHeight * -1 * 4})` :`scaleY(${(topTopH - wHeight) / wHeight * -1})`,
+                  transformOrigin: '50% 0% 0px',
+                  height: mob ? '25.7vh': '100vh',
+                }}
                 >
                   <div><Fa /></div>
                   <div><Wa /></div>
                 </div>
             </div>
             <div className='content'>
-              <div className='part_content' ref={refSection} data-ind={1}><Apropos data={apropos}/></div>
-              <div className='part_content' ref={refSection} data-ind={2}><Restaurant data={restaurant}/></div>
-              <div className='part_content' ref={refSection} data-ind={3}><Events data={events} /></div>
-              <div className='part_content' ref={refSection} data-ind={4}><Contacts data={contacts} /></div>
+              {count == 1 && <Apropos data={apropos}/>}
+              {count == 2 && <Restaurant data={restaurant}/>}
+              {count == 3 && <Events data={events}/>}
+              {count == 4 && <Contacts data={contacts}/>}
             </div>
             <div className='part bot' ref={bottom}>
                 <div 
                 className="sub_wrapper"
-                >
+                style={{
+                  transform: mob ? `scaleY(${(bottomTopH - wHeight) / wHeight * -1 * 4})` :`scaleY(${(bottomTopH - wHeight) / wHeight * -1})`,
+                  height: mob ? '25.7vh': '100vh',
+                  transformOrigin: mob ? '100% 100% 0px' : '50% 100% 0px',
+                }}>
                   <div><Fa /></div>
                   <div><Wa /></div>
                 </div>

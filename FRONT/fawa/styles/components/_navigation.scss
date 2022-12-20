@@ -7,6 +7,7 @@
     font-size: 1rem;
     margin: 5px;
     flex-direction: column;
+    font-size: var(--size_med);
 
     @include sizeone {
 
@@ -17,7 +18,7 @@
     &_item {
 
         padding: 4px 7px;
-        border-radius: 6px;
+        border-radius: 10px;
         margin: 5px;
 
         transition: color 0.3s ease,

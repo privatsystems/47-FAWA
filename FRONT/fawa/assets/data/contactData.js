@@ -2,7 +2,7 @@
 export const navigationData = [
     {
         index: 1,
-        name: 'Apropos',
+        name: 'À propos',
         color: '#3C2109',
         back: '#FF4500'
     },

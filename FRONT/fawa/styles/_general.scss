@@ -5,8 +5,9 @@
 :root {
 
     --size_big : 4rem;
-    --size_med : 1.3rem;
-    --size_courant : 0.95rem;
+    --size_med : 1.5rem;
+    --size_courant : 1rem;
+    --size_small : 0.85rem;
 
     --interligne : 1.2;
     --interlettrage_small : 0.1px;
@@ -14,8 +15,9 @@
     @include sizeone {
 
         --size_big : 1.5rem;
-        --size_med : 1rem;
-        --size_courant : 0.95rem;
+        --size_courant : 1rem;
+        --size_small : 0.55rem;
+
 
         --interligne : 1.2;
         --interlettrage_small : 0.1px;
@@ -48,5 +50,11 @@ html, body {
 h3 {
 
     text-align: center;
+
+}
+
+.restaurant, .events, .contacts {
+
+    padding-top: 500px;
 
 }
