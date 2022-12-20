@@ -17,7 +17,7 @@ const Events = ({ data }) => {
         <div className='images'>
             {images.map((image, index) => {
                 return <ImageWrapper 
-                key={`illl-${index}${image.src}`} 
+                key={`illl-${index}-${image.src}`} 
                 image={image}
                 />
             })}

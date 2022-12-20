@@ -67,6 +67,8 @@
         flex-wrap: wrap;
         width: calc(100% - 26px);
         margin: 0px 13px;
+        min-height: 100vh;
+        min-width: 100vw;
 
         @include sizeone {
 
@@ -75,6 +77,33 @@
         }
 
         .illustration_wrapper {
+
+            &.med {
+                
+                width: calc(((100vw - 26px) * 0.5 ));
+
+                img {
+
+                    width: calc(((100vw - 26px) * 0.5 ) - 26px);
+                    height: calc(((((100vw - 26px) * 0.5 ) - 26px) * var(--th)) / var(--tw));
+                    
+                }
+
+            }
+
+            &.large {
+
+                    width: calc(((100vw - 26px) * 0.8 ));
+                    margin: auto;
+                
+                    img {
+
+                        width: calc(((100vw - 26px) * 0.8 ) - 26px);
+                        height: calc(((((100vw - 26px) * 0.8 ) - 26px) * var(--th)) / var(--tw));
+                        
+                    }
+
+            }
 
             padding: 13px;
 
@@ -88,7 +117,9 @@
 
             img {
 
-                width: 100%;
+                min-width: 100%;
+                min-height: 50vh;
+                height: auto;
     
             }
 

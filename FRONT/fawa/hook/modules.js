@@ -37,7 +37,6 @@ const wichSize = (project) => {
 
 const initLeftPhrases = (sizes) => {
 
-    console.log(sizes)
     sizes.bigger.classList.add('allLeftRound')
     sizes.smaller.classList.contains('top') && sizes.smaller.classList.add('topLeftSmaller')
     sizes.smaller.classList.contains('bottom') && sizes.smaller.classList.add('bottomLeftSmaller')

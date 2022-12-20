@@ -2,8 +2,6 @@ import TableLine from "./tableLine"
 
 const Table = ({ table }) => {
 
-    console.log(table)
-
     return <div className='event_table'>
         <h3 style= {{
             color: table.color,

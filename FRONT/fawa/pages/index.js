@@ -15,35 +15,34 @@ export default function Home({ data }) {
 
   const { apropos, restaurant, events, contacts, infos } = data 
   const [count, setCount] = useState(1)
-  const [wHeight, setHeight] = useState(764)
 
 
   const content = useRef()
   const top = useRef()
   const bottom = useRef()
 
-  const partsArray = navigationData
-
   const observer = useRef()
 
   const options = {
     root: null,
     rootMargin: '100px',
-     threshold: 0.4
+     threshold: 0.01
 }
 
   const refSection = useCallback( 
     (node) => {
     observer.current = new IntersectionObserver((entries) => {
+        // entries[0].target.dataset.ind == 3 && console.log('3', entries[0])
+        // console.log('3', entries[0])
         if (entries[0].isIntersecting) {
+            console.log(entries[0]?.target)
             if(!entries[0]?.target.classList.contains('select')) {
-                console.log()
+                
                 const index = entries[0]?.target.dataset.ind
                 document.querySelector('.part_content.select')?.classList.remove('select')
                 setCount(index)
                 document.querySelector(`.navigation_item[data-menu="${index}"]`)?.classList.add('select')
                 entries[0]?.target.classList.add('select')
-                observer.current.unobserve(node) 
             }
         }
     }, options)
@@ -94,10 +93,6 @@ export default function Home({ data }) {
 
   }, [])
 
-  useEffect(() => {
-    setHeight(window.innerHeight)
-  })
-
 
   return (
     <div className={styles.container}>
@@ -119,9 +114,9 @@ export default function Home({ data }) {
             </div>
             <div className='content'>
               <div className='part_content' ref={refSection} data-ind={1}><Apropos data={apropos}/></div>
-              <div className='part_content' ref={refSection} data-ind={2}><Restaurant data={restaurant}/></div>
-              <div className='part_content' ref={refSection} data-ind={3}><Events data={events} /></div>
-              <div className='part_content' ref={refSection} data-ind={4}><Contacts data={contacts} /></div>
+              <div className='part_content' ref={refSection} data-ind={2}><Restaurant observer={observer} data={restaurant}/></div>
+              <div className='part_content' ref={refSection} data-ind={3}><Events data={events}/></div>
+              <div className='part_content' ref={refSection} data-ind={4}><Contacts data={contacts}/></div>
             </div>
             <div className='part bot' ref={bottom}>
                 <div 

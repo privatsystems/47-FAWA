@@ -1,3 +1,4 @@
+import { useCallback, useRef } from "react"
 import ImageWrapper from "../modules/imageWrapper"
 import TextBubble from "../modules/textBubble"
 
@@ -5,7 +6,6 @@ const Restaurant = ({ data }) => {
 
     const { bubbles, images, horaires } = data
 
-    console.log(horaires)
     return <div className='restaurant'>
 
         <div className='bubles'>

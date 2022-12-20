@@ -26,7 +26,7 @@ const ItemLink = ({ color, back, label, link }) => {
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
     >
-        <a href={link}>{label}</a>
+        <a href={link} target="_blank" rel="noopener">{label}</a>
     </div>
 
 }

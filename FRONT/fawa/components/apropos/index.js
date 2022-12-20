@@ -5,6 +5,13 @@ const Apropos = ({ data }) => {
 
     const { bubbles, images } = data
 
+    const options = {
+        root: null,
+        rootMargin: '100px',
+         threshold: 0.4
+    }
+    
+
     return <div className='apropos'>
 
         <div className='bubles'>

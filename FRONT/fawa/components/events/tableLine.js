@@ -25,14 +25,14 @@ const TableLine = ({ line, color, back }) => {
 
     if(isAfter(today, dateEvent)) return
 
-    return <a href={`${link}`}><div 
+    return <a href={`${link}`} target="_blank" rel="noopener"><div 
     className='event_table_line'
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
     style={{
-        backgroundColor: hover && back,
-        color: color,
-        borderBottom: `1px solid ${color}`
+        borderBottom: `1px solid ${color}`,
+        backgroundColor: hover ? color : back,
+        color: hover ? back : color,
     }}
     >
         
