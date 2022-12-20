@@ -4,13 +4,12 @@
 }
 :root {
 
-    --size_big : 4rem;
-    --size_med : 1.5rem;
-    --size_courant : 1rem;
-    --size_small : 0.85rem;
-
-    --interligne : 1.2;
-    --interlettrage_small : 0.1px;
+    -size_big: 4rem;
+    --size_med: 1.5rem;
+    --size_courant: 1rem;
+    --size_small: 1.05rem;
+    --interligne: 1.4;
+    --interlettrage_small: 0.3px;
 
     @include sizeone {
 
