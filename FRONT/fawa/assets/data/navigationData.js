@@ -3,7 +3,6 @@ export const navigationData = [
     {
         index: 1,
         name: 'À propos',
-        slug: 'apropos',
         color: '#3C2109',
         back: '#FF4500'
     },
