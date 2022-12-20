@@ -18,7 +18,7 @@ const Table = ({ table }) => {
         }}>
             <div>Date</div>
             <div>Horaires</div>
-            <div>Evenements</div>
+            <div>Événement</div>
             <div>Nom</div>
             <div>Prix</div>
         </div>
