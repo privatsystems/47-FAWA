@@ -19,6 +19,7 @@ const Apropos = ({ data }) => {
                 return <ImageWrapper 
                 key={`illl-${index}${image.src}`} 
                 image={image}
+                index={index}
                 />
             })}
         </div>

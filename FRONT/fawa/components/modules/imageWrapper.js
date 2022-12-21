@@ -1,15 +1,21 @@
 import classNames from "classnames"
 import Image from "next/image"
 import { useCallback, useRef } from "react"
+import { gsap } from 'gsap'
 
 
-const ImageWrapper = ({ image }) => {
+const ImageWrapper = ({ image, index }) => {
+
+    let threshold
+    (index % 2) == 0
+    ? threshold = 0
+    : threshold = 0.3
 
     const observer = useRef()
     const options = {
         root: null,
         rootMargin: '100px',
-         threshold: 0.6
+        threshold: 0.4
     }
 
     
@@ -20,6 +26,18 @@ const ImageWrapper = ({ image }) => {
                     
                     if(!entries[0]?.target.classList.contains('appeared')) {
                         entries[0]?.target.classList.add('appeared')
+                        gsap.timeline()
+                        .to(entries[0]?.target, {
+                            duration: 0.5,
+                            opacity: 1,
+                            y: 100
+                        },)
+                        .from(entries[0]?.target, {
+                            duration: 2.5,
+                            ease:"elastic.out(1, 0.3)",
+                            y: 100,
+                            delay: threshold
+                        }, '-=0.3')
                         observer.current.unobserve(node) 
                     }
                 }
@@ -39,12 +57,13 @@ const ImageWrapper = ({ image }) => {
         '--tw': image.dimensions.width,
         '--th': image.dimensions.height,
     }}
-    ref={refImage}>
+    >
         <Image
         src={image.src}
         width={image.dimensions.width}
         height={image.dimensions.height}
         alt=''
+        ref={refImage}
         />
         <div style={{ color: image.color }} dangerouslySetInnerHTML={{ __html: image.caption}}></div>
     </div>
