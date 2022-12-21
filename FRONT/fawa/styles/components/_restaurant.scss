@@ -6,7 +6,7 @@
 
         @include sizeone {
 
-            margin-top: 30px;
+            margin-top: calc(var(--margin) + 14px);
 
         }
 
@@ -15,22 +15,15 @@
     .text_content {
 
         columns: 2;
-        margin: 25px;
-        gap: 25px;
+        margin: var(--margin);
+        gap: var(--margin);
 
         @include sizeone {
 
             columns: 1;
-            margin: 20px;
+            margin: var(--margin);
 
         }
-
-    }
-
-    .images {
-
-        margin-top: -20px;
-
 
     }
 

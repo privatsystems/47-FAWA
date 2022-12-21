@@ -1,23 +1,25 @@
 .content {
 
-    margin: -8px 0px;
+    margin: 0px;
+    margin-top: -8px;
     background-color: white;
 
     @include sizeone {
 
-        margin: 20px  0px
+        margin: 0px;
+        margin-top: -9px;
 
     }
 
     .buble_text {
     
         width: calc(100% - 60px);
-        margin: 55px 0px;
+        margin: calc(var(--margin) + 40px) 0px;
 
         @include sizeone {
 
-            width: calc(100% - 25px);
-            margin: 35px 0px;
+            width: calc(100% - 40px);
+            margin: calc(var(--margin) + 25px) 0px;
 
         }
     
@@ -37,7 +39,7 @@
             padding-bottom: 19px;
             padding-right: 29px;
             font-weight: 500;
-            margin: 0px 30px;
+            margin: 0px calc(var(--margin) * 2);
             border-radius: 16px;
 
             box-decoration-break: clone;
@@ -46,16 +48,34 @@
 
             @include sizeone {
 
-                margin: 0px 24px;
+                margin: 0px calc(var(--margin) + 10px);
+                margin-right: 0px;
+                padding: 4px 14px 7px 12px;
+                border-radius: 0px;
+                line-height: 1.5;
 
             }
         }
 
-        &:last-child {
+        &:first-child {
+
+            margin-top: calc(var(--margin) + 29px);
 
             @include sizeone {
 
-                margin-bottom: 10px;
+                margin-top: calc(var(--margin) + 25px);
+
+            }
+
+        }
+
+        &:last-child {
+
+            margin-bottom: calc(var(--margin) + 25px);
+
+            @include sizeone {
+
+                margin-bottom: var(--margin);
 
             }
 
@@ -67,10 +87,8 @@
 
         display: flex;
         flex-wrap: wrap;
-        width: calc(100% - 26px);
-        margin: 0px 13px;
-        min-height: 100vh;
-        min-width: 100vw;
+        width: calc(100% - (var(--margin) - 10px) * 2);
+        margin: 0px calc(var(--margin) - 10px);
 
         @include sizeone {
 
@@ -80,14 +98,27 @@
 
         .illustration_wrapper {
 
+            opacity: 0;
+            transform: translate3D(60px);
+
+            transition: opacity 2s ease,
+                        transform 2s ease;
+
+            &.appeared {
+
+                opacity: 1;
+                transform: translate3D(0px);
+
+            }
+
             &.med {
                 
-                width: calc(((100vw - 26px) * 0.5 ));
+                width: 50%;
 
                 img {
 
-                    width: calc(((100vw - 26px) * 0.5 ) - 26px);
-                    height: calc(((((100vw - 26px) * 0.5 ) - 26px) * var(--th)) / var(--tw));
+                    width: 100%;
+                    height: auto
                     
                 }
 
@@ -95,13 +126,13 @@
 
             &.large {
 
-                    width: calc(((100vw - 26px) * 0.8 ));
+                    width: 80%;
                     margin: auto;
                 
                     img {
 
-                        width: calc(((100vw - 26px) * 0.8 ) - 26px);
-                        height: calc(((((100vw - 26px) * 0.8 ) - 26px) * var(--th)) / var(--tw));
+                        width: 100%;
+                        height: auto;
                         
                     }
 
@@ -112,15 +143,14 @@
             @include sizeone {
 
                 width: 100%!important;
-                padding: 0px 3px;
-                margin-top: 20px!important;
+                padding: 0px 0px;
+                margin-top: var(--margin)!important;
     
             }
 
             img {
 
-                min-width: 100%;
-                min-height: 50vh;
+                width: auto;
                 height: auto;
     
             }
@@ -134,17 +164,17 @@
             p {
 
                 font-size: var(--size_small);
-                margin-top: 20px;
+                margin-top: calc(var(--margin) + 1px);
 
                 @include sizeone {
 
-                    margin-top: 15px;
+                    margin-top: var(--margin);
 
                 }
 
                 &:first-child {
 
-                    margin-top: 15px;
+                    margin-top: calc(var(--margin) - 1px);
 
                 }
 

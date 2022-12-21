@@ -1,8 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const ItemLink = ({ color, back, label, link }) => {
+const ItemLink = ({ color, back, label, mobLabel,  link }) => {
 
     const [hover, setHover] = useState(false)
+    const [mob, setMob] = useState(false)
 
     const handleMouseEnter = () => {
 
@@ -16,6 +17,13 @@ const ItemLink = ({ color, back, label, link }) => {
 
     }
 
+    useEffect(() => {
+
+        window.innerWidth > 800
+        ? setMob(false) : setMob(true)
+
+    }, [])
+
     return <div 
     className={`navigation_item`}
     style={{ 
@@ -26,7 +34,7 @@ const ItemLink = ({ color, back, label, link }) => {
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
     >
-        <a href={link} target="_blank" rel="noreferrer">{label}</a>
+        <a href={link} target="_blank" rel="noreferrer">{mob ? mobLabel : label}</a>
     </div>
 
 }

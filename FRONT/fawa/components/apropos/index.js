@@ -1,16 +1,10 @@
+import { useRef } from "react"
 import ImageWrapper from "../modules/imageWrapper"
 import TextBubble from "../modules/textBubble"
 
 const Apropos = ({ data }) => {
 
     const { bubbles, images } = data
-
-    const options = {
-        root: null,
-        rootMargin: '100px',
-         threshold: 0.4
-    }
-    
 
     return <div className='apropos'>
 

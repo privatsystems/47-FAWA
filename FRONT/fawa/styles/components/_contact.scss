@@ -2,26 +2,27 @@
 
     &_content {
 
-        margin: 25px;
+        margin: var(--margin);
         color: $marron;
         font-size: var(--size_med);
 
         @include sizeone {
 
-            margin: 20px;
-            margin-top: 30px;
+            margin: var(--margin);
+            margin-top: calc(var(--margin) + 11px);
+            margin-bottom: 0px;
 
         }
 
         .content_text {
 
             display: flex;
-            margin-top: 25px;
+            margin-top: var(--margin);
 
             @include sizeone {
 
                 flex-direction: column;
-                margin-top: 20px;
+                margin-top: var(--margin);
 
             }
 
@@ -31,19 +32,19 @@
 
                 p {
 
-                    margin-bottom: 25px;
-
-                    @include sizeone {
-
-                        margin-bottom: 20px;
-        
-                    }
+                    margin-bottom: var(--margin);
 
                 }
 
                 a {
 
-                    color: $vert2
+                    color: $vert2;
+
+                    &:hover {
+
+                        color: $orange;
+
+                    }
 
                 }
             

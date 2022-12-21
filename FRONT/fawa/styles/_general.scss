@@ -10,16 +10,19 @@
     --size_small: 1.05rem;
     --interligne: 1.4;
     --interlettrage_small: 0.3px;
+    --margin: 25px;
 
     @include sizeone {
 
-        --size_big : 1.5rem;
-        --size_courant : 1rem;
-        --size_small : 0.55rem;
+        --size_big: 2rem;
+        --size_courant: 0.7rem;
+        --size_small: 1.05rem;
 
 
         --interligne : 1.2;
         --interlettrage_small : 0.1px;
+
+        --margin: 15px
 
     }
 

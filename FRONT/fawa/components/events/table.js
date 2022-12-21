@@ -4,8 +4,7 @@ const Table = ({ table }) => {
 
     return <div className='event_table'>
         <h3 style= {{
-            color: table.color,
-            marginBottom: '25px'
+            color: table.color
         }}>
             Programme des événements à venir
         </h3>

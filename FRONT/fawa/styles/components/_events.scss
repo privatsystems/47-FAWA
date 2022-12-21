@@ -4,10 +4,24 @@ $p100 : calc((100vw - 50px) / 100);
 
     font-size: var(--size_med);
 
+    h3 {
+
+        margin-bottom: var(--margin);
+
+    }
+
     &_table {
 
-        margin: 25px;
-        width: calc(100vw - 50px);
+        margin: var(--margin);
+        width: calc(100vw - calc(var(--margi) * 2));
+
+        @include sizeone {
+
+            margin: var(--margin);
+            margin-top: calc(var(--margin) + 9px);
+            width: calc(100% - (var(--margin) * 2));
+
+        }
 
         &_line {
 
@@ -15,6 +29,12 @@ $p100 : calc((100vw - 50px) / 100);
             grid-template-columns: calc($p100 * 15) calc($p100 * 10) calc($p100 * 20) calc($p100 * 50) calc($p100 * 5);
             padding: 5px;
         }
+
+    }
+
+    .illustration_wrapper:first-child {
+
+        margin-top: 0px!important;
 
     }
 
