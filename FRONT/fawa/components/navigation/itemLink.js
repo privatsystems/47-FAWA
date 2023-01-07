@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const ItemLink = ({ color, back, label, mobLabel,  link }) => {
+const ItemLink = ({ color, back, bub, label, mobLabel,  link }) => {
 
     const [hover, setHover] = useState(false)
     const [mob, setMob] = useState(false)
@@ -27,8 +27,8 @@ const ItemLink = ({ color, back, label, mobLabel,  link }) => {
     return <div 
     className={`navigation_item`}
     style={{ 
-        color: hover && link ? back : color,
-        backgroundColor : hover && link ? color : back,
+        color: color,
+        backgroundColor : hover && link ? bub : back,
         cursor: link && 'pointer'
     }}
     onMouseEnter={handleMouseEnter}

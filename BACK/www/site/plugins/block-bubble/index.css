@@ -187,3 +187,11 @@ video {
     border-radius: 30px;
 
 }
+
+.k-block.k-block-type-text-bubble p strong{
+
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+
+}

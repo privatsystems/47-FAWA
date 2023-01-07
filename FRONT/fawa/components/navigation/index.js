@@ -22,6 +22,7 @@ const Navigation = ({ count, infos, setCount }) => {
             <ItemLink
             color={itemSelect.color}
             back={itemSelect.back}
+            bub={itemSelect.bub}
             label='11 bis Place Auguste Baron, 75019 Paris'
             mobLabel='Adresse'
             link='https://goo.gl/maps/aSNArD5tnpuW8io17'
@@ -29,6 +30,7 @@ const Navigation = ({ count, infos, setCount }) => {
             <ItemLink
             color={itemSelect.color}
             back={itemSelect.back}
+            bub={itemSelect.bub}
             label='IG'
             mobLabel='IG'
             link='https://www.instagram.com/fawa__wafa/'
@@ -36,6 +38,7 @@ const Navigation = ({ count, infos, setCount }) => {
             <ItemLink
             color={itemSelect.color}
             back={itemSelect.back}
+            bub={itemSelect.bub}
             label='FB'
             mobLabel='FB'
             link='https://www.facebook.com/projetfawa?mibextid=LQQJ4d'

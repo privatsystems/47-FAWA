@@ -6,7 +6,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      'fawa.privat.systems', 'privat.systems'
+      'fawa.privat.systems', 'privat.systems', 'localhost'
     ],
     deviceSizes: [640, 750, 1080, 1200, 1920, 2048],
     },

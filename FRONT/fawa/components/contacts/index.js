@@ -1,10 +1,24 @@
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import TextBubble from "../modules/textBubble"
 
-const Contacts = ({ data }) => {
+const Contacts = ({ data, setCount, dataInd, change, setChange }) => {
 
     const { bubbles, emails, text } = data
 
-    return <div className='contacts'>
+    const { ref, inView, entry } = useInView({
+        /* Optional options */
+        rootMargin: "-370px 0px -370px 0px",
+    });
+
+    useEffect(() => {
+
+        inView && setCount(dataInd)
+        setChange(dataInd)
+
+    }, [inView, change])
+
+    return <div className='contacts' ref={ref}>
 
         <div className='bubles'>
             {bubbles.map((bubble, index) => {

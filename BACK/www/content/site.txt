@@ -2,7 +2,7 @@ Title: In Practices Studio
 
 ----
 
-Apropos-text-content: [{"content":{"text_content":"<p>FAWA est un projet collectif, solidaire, culturel et culinaire n\u00e9 en Janvier 2020.<\/p>","color":"#FFFF4A","back":"#00B140"},"id":"0e0be866-dfa0-4bf8-b1f5-a50932ece64b","isHidden":false,"type":"text-bubble"},{"content":{"text_content":"<p>Nous sommes situ\u00e9\u00b7e\u00b7s \u00e0 l\u2019intersection entre Aubervilliers, Pantin et le 19e arrondissement. \u00c0 FAWA nos valeurs sont la solidarit\u00e9, la responsabilit\u00e9, la convivialit\u00e9, la cr\u00e9ativit\u00e9 et la mixit\u00e9. Notre grande halle passante est \u00e0 voir comme un lieu de vie.<\/p>","color":"#00B140","back":"#FFD8E5"},"id":"97a8f772-0b87-4292-a50f-6d25b07912f4","isHidden":false,"type":"text-bubble"},{"content":{"text_content":"<p>V\u00e9ritable incubateur en journ\u00e9e, \u00e0 FAWA nous accueillons un bar associatif,  partageons des  projets alternatifs  et recevons des  conf\u00e9rences et des  \u00e9v\u00e9nements culturels.<\/p>","color":"#FFFFFF","back":"#005500"},"id":"982fce03-b06d-444b-86d5-f3c58210f915","isHidden":false,"type":"text-bubble"}]
+Apropos-text-content: [{"content":{"text_content":"<p>FAWA est un projet <strong>collectif, solidaire, culturel et culinaire<\/strong> n\u00e9 en Janvier 2020.<\/p>"},"id":"0e0be866-dfa0-4bf8-b1f5-a50932ece64b","isHidden":false,"type":"text-bubble"},{"content":{"text_content":"<p>Nous sommes situ\u00e9\u00b7e\u00b7s \u00e0 l\u2019intersection entre Aubervilliers, Pantin et le 19e arrondissement. \u00c0 FAWA nos valeurs sont la solidarit\u00e9, la responsabilit\u00e9, la convivialit\u00e9, la cr\u00e9ativit\u00e9 et la mixit\u00e9. Notre grande halle passante est \u00e0 voir comme un lieu de vie.<\/p>"},"id":"97a8f772-0b87-4292-a50f-6d25b07912f4","isHidden":false,"type":"text-bubble"},{"content":{"text_content":"<p>V\u00e9ritable incubateur en journ\u00e9e, \u00e0 FAWA nous accueillons un bar associatif,  partageons des  projets alternatifs  et recevons des  conf\u00e9rences et des  \u00e9v\u00e9nements culturels.<\/p>"},"id":"982fce03-b06d-444b-86d5-f3c58210f915","isHidden":false,"type":"text-bubble"}]
 
 ----
 
@@ -10,7 +10,7 @@ Layouts: [{"content":{"image":["capture-decran-2022-12-14-a-13.56.53.png"],"form
 
 ----
 
-Restaurant-text-content: [{"content":{"text_content":"<p>Notre projet de restauration WAFA, qui veut dire \u2018\u2019loyaut\u00e9\u2019\u2019 en arabe, pr\u00f4ne  une cuisine responsable, \u00e9cologique et solidaire. Gr\u00e2ce \u00e0 la r\u00e9cup\u00e9ration d\u2019invendus, nous visons une activit\u00e9 z\u00e9ro d\u00e9chets et une accessibilit\u00e9 maximale gr\u00e2ce \u00e0 des tarifs tr\u00e8s abordables.<\/p>","color":"#FF4500","back":"#FFFF4A"},"id":"22d5a923-feb1-468a-8c17-34a53470c18e","isHidden":false,"type":"text-bubble"}]
+Restaurant-text-content: [{"content":{"text_content":"<p>Notre projet de restauration WAFA, qui veut dire \u2018\u2019loyaut\u00e9\u2019\u2019 en arabe, pr\u00f4ne  une cuisine responsable, \u00e9cologique et solidaire. Gr\u00e2ce \u00e0 la r\u00e9cup\u00e9ration d\u2019invendus, nous visons une activit\u00e9 z\u00e9ro d\u00e9chets et une accessibilit\u00e9 maximale gr\u00e2ce \u00e0 des tarifs tr\u00e8s abordables.<\/p>"},"id":"22d5a923-feb1-468a-8c17-34a53470c18e","isHidden":false,"type":"text-bubble"}]
 
 ----
 
@@ -26,7 +26,7 @@ Rest-galerie: [{"content":{"image":["capture-decran-2022-12-16-a-07.33.11.png"],
 
 ----
 
-Event-text-content: [{"content":{"text_content":"<p>Le soir, l\u2019activit\u00e9 du lieu se d\u00e9die \u00e0 la f\u00eate gr\u00e2ce aux soir\u00e9es organis\u00e9es mettant \u00e0 l\u2019honneur des collectifs d\u2019artistes, toujours dans un esprit inclusif et bienveillant.<\/p>","color":"#00B140","back":"#3C2109"},"id":"6b36f990-8e13-4422-8ce4-7fcb728129eb","isHidden":false,"type":"text-bubble"}]
+Event-text-content: [{"content":{"text_content":"<p>Le soir, l\u2019activit\u00e9 du lieu se d\u00e9die \u00e0 la f\u00eate gr\u00e2ce aux soir\u00e9es organis\u00e9es mettant \u00e0 l\u2019honneur des collectifs d\u2019artistes, toujours dans un esprit inclusif et bienveillant.<\/p>"},"id":"6b36f990-8e13-4422-8ce4-7fcb728129eb","isHidden":false,"type":"text-bubble"}]
 
 ----
 
@@ -40,12 +40,14 @@ Evnt-part-two:
   horaire: 19h à 22h
   type: Concert
   prix: Gratuit
+  link: ""
 - 
   name: 'Xeno & Oaklander'
   date: 2022-12-30
   horaire: 19h à 2h
   type: Film Projection
   prix: 17€
+  link: ""
 - 
   name: >
     Dorothy Dandridge 100th Birthday
@@ -54,12 +56,14 @@ Evnt-part-two:
   horaire: 19h à 22h
   type: Concert
   prix: Gratuit
+  link: ""
 - 
   name: 'Xeno & Oaklander'
   date: 2022-12-30
   horaire: 19h à 2h
   type: Film Projection
   prix: 17€
+  link: ""
 - 
   name: >
     Dorothy Dandridge 100th Birthday
@@ -68,18 +72,21 @@ Evnt-part-two:
   horaire: 19h à 22h
   type: Concert
   prix: Gratuit
+  link: ""
 - 
   name: 'Xeno & Oaklander'
   date: 2022-12-30
   horaire: 19h à 2h
   type: Film Projection
   prix: 17€
+  link: ""
 - 
   name: jjj
   date: 2022-12-08
   horaire: ""
   type: ""
   prix: ""
+  link: ""
 
 ----
 
@@ -95,7 +102,7 @@ Evnt-galerie: [{"content":{"image":["capture-decran-2022-12-16-a-11.33.23.png"],
 
 ----
 
-Contact-text-content: [{"content":{"text_content":"<p>Enfin, FAWA c\u2019est une vision et une proposition modulable au gr\u00e9 des rencontres et des \u00e9changes. C\u2019est ce que vous voudrez en faire et surtout ce que nous ferons ensemble !<\/p>","color":"#FFD8E5","back":"#FF4500"},"id":"1cda3750-427f-4b2b-b81b-1307fd28b9be","isHidden":false,"type":"text-bubble"}]
+Contact-text-content: [{"content":{"text_content":"<p>Enfin, FAWA c\u2019est une vision et une proposition modulable au gr\u00e9 des rencontres et des \u00e9changes. C\u2019est ce que vous voudrez en faire et surtout ce que nous ferons ensemble !<\/p>"},"id":"1cda3750-427f-4b2b-b81b-1307fd28b9be","isHidden":false,"type":"text-bubble"}]
 
 ----
 

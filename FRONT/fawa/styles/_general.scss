@@ -2,6 +2,7 @@
 * {
     box-sizing: border-box;
 }
+
 :root {
 
     --size_big: 4rem;
@@ -26,8 +27,6 @@
 
     }
 
-    // legal
-
 }
 
 html{
@@ -46,6 +45,16 @@ html, body {
     font-size: var(--size_courant);
     line-height: var(--interligne);
     letter-spacing: var(--interlettrage_small);
+    width: 100vw;
+    overflow-x: hidden;
+
+}
+
+main {
+
+    background-color: var(--back);
+    color: var(--color);
+    transition: background-color 0.3s ease;
 
 }
 

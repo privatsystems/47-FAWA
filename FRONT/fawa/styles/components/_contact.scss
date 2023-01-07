@@ -3,7 +3,7 @@
     &_content {
 
         margin: var(--margin);
-        color: $marron;
+        color: var(--color);
         font-size: var(--size_med);
 
         @include sizeone {
@@ -38,19 +38,18 @@
 
                 a {
 
-                    color: $vert2;
+                    color: var(--bub);
 
                     &:hover {
 
-                        color: $orange;
+                        color: var(--color);
+                        background-color: var(--bub);
+                        box-shadow: 11px 0 0 var(--bub), -14px 0 0 var(--bub), 11px 5px 0 var(--bub), -14px 5px var(--bub);
+                        border-radius: 15px;
 
                     }
-
                 }
-            
             }
         }
-
     }
-
 }

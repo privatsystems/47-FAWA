@@ -29,11 +29,6 @@ const TableLine = ({ line, color, back }) => {
     className='event_table_line'
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
-    style={{
-        borderBottom: `1px solid ${color}`,
-        backgroundColor: hover ? color : back,
-        color: hover ? back : color,
-    }}
     >
         
             <div>{format(new Date(date), 'eeee dd MMMM', {awareOfUnicodeTokens: true, locale: fr})}</div>

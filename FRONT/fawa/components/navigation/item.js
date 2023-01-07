@@ -35,24 +35,15 @@ const Item = ({ item, count, setCount, index }) => {
             ease: 'Power3.in',
             onComplete:(() => { setCount(index + 1) })
         })
-        // .to(window, {
-        //     duration: 0.5,
-        //     scrollTo: window.innerHeight,
-        //     ease: 'Power3.in'
-        // })
 
     }
-
-    // const quidSelect = classNames({
-    //     select: count == navigationData[index].index
-    // })
 
     return <div 
     className='navigation_item'
     data-menu={index}
     style={{ 
-        color: count == navigationData[index].index || hover ? navigationData[count - 1].back : navigationData[count - 1].color,
-        backgroundColor : count == navigationData[index].index || hover ? navigationData[count - 1].color : navigationData[count - 1].back,
+        color: count == navigationData[index].index || hover ? navigationData[count - 1].color : navigationData[count - 1].color,
+        backgroundColor : count == navigationData[index].index || hover ? navigationData[count - 1].bub : navigationData[count - 1].back,
         cursor: 'pointer'
     }}
     onMouseEnter={handleMouseEnter}
