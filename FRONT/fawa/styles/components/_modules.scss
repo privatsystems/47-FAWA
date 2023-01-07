@@ -1,8 +1,9 @@
+$radius: 30px;
+
 .content {
 
     margin: 0px;
     margin-top: -8px;
-    background-color: white;
 
     @include sizeone {
 
@@ -13,7 +14,7 @@
 
     .buble_text {
     
-        opacity: 0;
+        // opacity: 0;
         width: calc(100% - 60px);
         margin: calc(var(--margin) + 40px) 0px;
 
@@ -29,10 +30,8 @@
             font-size: var(--size_big);
             line-height: 1.3;
             font-weight: 1;
-    
-            background-color: var(--back);
+
             color: var(--color);
-    
             
             width: fit-content;
             display: inline;
@@ -45,7 +44,36 @@
 
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
-            filter: url('#instagram');
+            // filter: url('#instagram');
+
+            transition: background-color 0.3s ease;
+
+            strong {
+
+                font-weight: 300;
+                color: var(--color);
+                background-color: var(--bub);
+                padding: 0px;
+                box-shadow: 18px 0 0 var(--bub), -11px 0 0 var(--bub), 18px 5px 0 var(--bub), -11px 5px var(--bub);
+                line-height: 23px;
+                -moz-border-bottom-left-radius: $radius;
+                -webkit-border-bottom-left-radius: $radius;
+                border-bottom-left-radius: $radius;
+                -moz-border-bottom-right-radius: $radius;
+                -webkit-border-bottom-right-radius: $radius;
+                border-bottom-right-radius: $radius;
+                -moz-border-top-right-radius: $radius;
+                -webkit-border-top-right-radius: $radius;
+                border-top-right-radius: $radius;
+                -moz-border-border-top-left-radius: $radius;
+                -webkit-border-border-top-left-radius: $radius;
+                border-top-left-radius: $radius;
+                -webkit-box-decoration-break: clone;
+                -o-box-decoration-break: clone;
+                box-decoration-break: clone;
+                
+            }
+
 
             @include sizeone {
 
@@ -98,11 +126,6 @@
         }
 
         .illustration_wrapper {
-        
-            // transform: translate3D(60px);
-
-            // transition: opacity 2s ease,
-            //             transform 2s ease;
 
             img {
 
@@ -171,6 +194,7 @@
 
                 font-size: var(--size_small);
                 margin-top: calc(var(--margin) + 1px);
+                color: var(--color);
 
                 @include sizeone {
 
