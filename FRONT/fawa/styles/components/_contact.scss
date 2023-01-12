@@ -38,14 +38,16 @@
 
                 a {
 
-                    color: var(--bub);
+                    color: var(--color);
+                    background-color: var(--bub);
+                    box-shadow: 11px 0 0 var(--bub), -14px 0 0 var(--bub), 11px 5px 0 var(--bub), -14px 5px var(--bub);
+                    border-radius: 10px;
 
                     &:hover {
 
-                        color: var(--color);
-                        background-color: var(--bub);
-                        box-shadow: 11px 0 0 var(--bub), -14px 0 0 var(--bub), 11px 5px 0 var(--bub), -14px 5px var(--bub);
-                        border-radius: 15px;
+                        color: var(--bub);
+                        background-color: var(--color);
+                        box-shadow: 11px 0 0 var(--color), -14px 0 0 var(--color), 11px 5px 0 var(--color), -14px 5px var(--color);
 
                     }
                 }

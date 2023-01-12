@@ -42,8 +42,8 @@ const Item = ({ item, count, setCount, index }) => {
     className='navigation_item'
     data-menu={index}
     style={{ 
-        color: count == navigationData[index].index || hover ? navigationData[count - 1].color : navigationData[count - 1].color,
-        backgroundColor : count == navigationData[index].index || hover ? navigationData[count - 1].bub : navigationData[count - 1].back,
+        color: count == navigationData[index].index || hover ? navigationData[count - 1].color : navigationData[count - 1].back,
+        backgroundColor : count == navigationData[index].index || hover ? navigationData[count - 1].bub : navigationData[count - 1].color,
         cursor: 'pointer'
     }}
     onMouseEnter={handleMouseEnter}

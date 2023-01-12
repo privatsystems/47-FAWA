@@ -15,13 +15,13 @@ $radius: 30px;
     .buble_text {
     
         // opacity: 0;
-        width: calc(100% - 60px);
-        margin: calc(var(--margin) + 40px) 0px;
+        width: calc(100% - (var(--margin) * 2));
+        margin: calc(var(--margin) + 40px) var(--margin);
 
         @include sizeone {
 
-            width: calc(100% - 40px);
-            margin: calc(var(--margin) + 25px) 0px;
+            width: calc(100% - (var(--margin) * 2));
+            margin: calc(var(--margin) + 25px) var(--margin);
 
         }
     
@@ -35,11 +35,7 @@ $radius: 30px;
             
             width: fit-content;
             display: inline;
-            padding: 3px 22px;
-            padding-bottom: 19px;
-            padding-right: 29px;
             font-weight: 500;
-            margin: 0px calc(var(--margin) * 2);
             border-radius: 16px;
 
             box-decoration-break: clone;
@@ -54,7 +50,7 @@ $radius: 30px;
                 color: var(--color);
                 background-color: var(--bub);
                 padding: 0px;
-                box-shadow: 18px 0 0 var(--bub), -11px 0 0 var(--bub), 18px 5px 0 var(--bub), -11px 5px var(--bub);
+                box-shadow: 10px 0 0 var(--bub), -10px 10px 0 var(--bub), 10px 10px 0 var(--bub), -10px 0px var(--bub);
                 line-height: 23px;
                 -moz-border-bottom-left-radius: $radius;
                 -webkit-border-bottom-left-radius: $radius;
@@ -194,7 +190,7 @@ $radius: 30px;
 
                 font-size: var(--size_small);
                 margin-top: calc(var(--margin) + 1px);
-                color: var(--color);
+                color: var(--bub);
 
                 @include sizeone {
 

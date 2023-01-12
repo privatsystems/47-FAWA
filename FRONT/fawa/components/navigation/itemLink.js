@@ -27,8 +27,8 @@ const ItemLink = ({ color, back, bub, label, mobLabel,  link }) => {
     return <div 
     className={`navigation_item`}
     style={{ 
-        color: color,
-        backgroundColor : hover && link ? bub : back,
+        color: hover && link ? color : back,
+        backgroundColor : hover && link ? bub : color,
         cursor: link && 'pointer'
     }}
     onMouseEnter={handleMouseEnter}
