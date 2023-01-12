@@ -121,10 +121,10 @@ export default function Home({ data }) {
                 </div>
             </div>
             <div className='content'>
-              <div className='part_content'><Apropos data={apropos} setCount={setCount} setChange={setChange} change={change} dataInd={1} /></div>
-              <div className='part_content'><Restaurant data={restaurant} setCount={setCount} setChange={setChange} change={change} dataInd={2} /></div>
-              <div className='part_content'><Events data={events} setCount={setCount} setChange={setChange} change={change} dataInd={3} /></div>
-              <div className='part_content'><Contacts data={contacts} setCount={setCount} setChange={setChange} change={change} dataInd={4} /></div>
+              <div className='part_content' data-ind={1}><Apropos data={apropos} setCount={setCount} setChange={setChange} change={change} dataInd={1} /></div>
+              <div className='part_content' data-ind={2}><Restaurant data={restaurant} setCount={setCount} setChange={setChange} change={change} dataInd={2} /></div>
+              <div className='part_content' data-ind={3}><Events data={events} setCount={setCount} setChange={setChange} change={change} dataInd={3} /></div>
+              <div className='part_content' data-ind={4}><Contacts data={contacts} setCount={setCount} setChange={setChange} change={change} dataInd={4} /></div>
             </div>
             <div className='part bot' ref={bottom}>
                 <div 
