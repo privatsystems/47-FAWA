@@ -109,7 +109,8 @@ export default function Home({ data }) {
       style={{
         '--color': navigationData[count - 1].color,
         '--back': navigationData[count - 1].back,
-        '--bub': navigationData[count - 1].bub
+        '--bub': navigationData[count - 1].bub,
+        '--small': navigationData[count - 1].small,
       }}>
         <section className="page home smooth-scroll" data-namespace="home" data-menu='home' dir="ltr">
             <div className='part top' ref={top}>

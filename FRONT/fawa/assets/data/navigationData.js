@@ -5,7 +5,8 @@ export const navigationData = [
         name: 'À propos',
         color: '#3C2109',
         back: '#FF4500',
-        bub: '#FFD8E5'
+        bub: '#FFD8E5',
+        small: '#FFD8E5'
     },
     {
         index: 2,
@@ -13,7 +14,8 @@ export const navigationData = [
         name: 'Le&nbsp;Restaurant',
         color: '#005500',
         back: '#FFFF4A',
-        bub: '#83CFFF'
+        bub: '#83CFFF',
+        small: '#005500'
     },
     {
         index: 3,
@@ -21,7 +23,8 @@ export const navigationData = [
         name: 'Les&nbsp;Évenements',
         color: '#00B140',
         back: '#3C2109',
-        bub: '#FFD8E5'
+        bub: '#FFD8E5',
+        small:'#FFD8E5'
     },
     {
         index: 4,
@@ -29,6 +32,7 @@ export const navigationData = [
         name: 'Contacts',
         color: '#005500',
         back: '#00B140',
-        bub: '#83CFFF'
+        bub: '#83CFFF',
+        small: '#005500'
     }
 ]
