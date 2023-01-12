@@ -6,7 +6,7 @@
 
         @include sizeone {
 
-            margin-top: calc(var(--margin) + 14px);
+            margin-top: calc(var(--smallmargin) + 14px);
 
         }
 
@@ -15,14 +15,13 @@
     .text_content {
 
         columns: 2;
-        margin: var(--margin);
+        margin: var(--smallmargin) var(--margin);
         gap: var(--margin);
         text-align: center;
 
         @include sizeone {
 
             columns: 1;
-            margin: var(--margin);
 
         }
 

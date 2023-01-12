@@ -16,12 +16,12 @@ $radius: 30px;
     
         // opacity: 0;
         width: calc(100% - (var(--margin) * 2));
-        margin: calc(var(--margin) + 40px) var(--margin);
+        margin: calc(var(--smallmargin) + 40px) var(--margin);
 
         @include sizeone {
 
             width: calc(100% - (var(--margin) * 2));
-            margin: calc(var(--margin) + 25px) var(--margin);
+            margin: calc(var(--smallmargin) + 25px) var(--margin);
 
         }
     
@@ -73,7 +73,7 @@ $radius: 30px;
 
             @include sizeone {
 
-                margin: 0px calc(var(--margin) + 10px);
+                margin: 0px calc(var(--smallmargin) + 10px);
                 margin-right: 0px;
                 padding: 4px 14px 7px 12px;
                 border-radius: 0px;
@@ -84,11 +84,11 @@ $radius: 30px;
 
         &:first-child {
 
-            margin-top: calc(var(--margin) + 29px);
+            margin-top: calc(var(--smallmargin) + 29px);
 
             @include sizeone {
 
-                margin-top: calc(var(--margin) + 25px);
+                margin-top: calc(var(--smallmargin) + 25px);
 
             }
 
@@ -96,11 +96,11 @@ $radius: 30px;
 
         &:last-child {
 
-            margin-bottom: calc(var(--margin) + 25px);
+            margin-bottom: calc(var(--smallmargin) + 25px);
 
             @include sizeone {
 
-                margin-bottom: var(--margin);
+                margin-bottom: var(--smallmargin);
 
             }
 
@@ -112,8 +112,8 @@ $radius: 30px;
 
         display: flex;
         flex-wrap: wrap;
-        width: calc(100% - (var(--margin) - 10px) * 2);
-        margin: 0px calc(var(--margin) - 10px);
+        width: calc(100% - (var(--smallmargin) - 10px) * 2);
+        margin: 0px calc(var(--smallmargin) - 10px);
 
         @include sizeone {
 
@@ -169,7 +169,7 @@ $radius: 30px;
 
                 width: 100%!important;
                 padding: 0px 0px;
-                margin-top: var(--margin)!important;
+                margin-top: var(--smallmargin)!important;
     
             }
 
@@ -189,18 +189,18 @@ $radius: 30px;
             p {
 
                 font-size: var(--size_small);
-                margin-top: calc(var(--margin) + 1px);
+                margin-top: calc(var(--smallmargin) + 1px);
                 color: var(--bub);
 
                 @include sizeone {
 
-                    margin-top: var(--margin);
+                    margin-top: var(--smallmargin);
 
                 }
 
                 &:first-child {
 
-                    margin-top: calc(var(--margin) - 1px);
+                    margin-top: calc(var(--smallmargin) - 1px);
 
                 }
 

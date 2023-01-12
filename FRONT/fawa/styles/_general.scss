@@ -12,6 +12,7 @@
     --interligne: 1.4;
     --interlettrage_small: 0.3px;
     --margin: 60px;
+    --smallmargin: 25px;
 
     @include sizeone {
 
@@ -24,6 +25,7 @@
         --interlettrage_small : 0.1px;
 
         --margin: 15px
+        --smallmargin: 15px;
 
     }
 
