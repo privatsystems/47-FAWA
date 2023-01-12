@@ -16,7 +16,7 @@ $radius: 30px;
     
         // opacity: 0;
         width: calc(100% - (var(--margin) * 2));
-        margin: calc(var(--smallmargin) + 40px) var(--margin);
+        margin: var(--verticalmargin) var(--margin);
 
         @include sizeone {
 
@@ -49,21 +49,9 @@ $radius: 30px;
                 font-weight: 300;
                 color: var(--color);
                 background-color: var(--bub);
-                padding: 0px;
-                box-shadow: 10px 0 0 var(--bub), -10px 10px 0 var(--bub), 10px 10px 0 var(--bub), -10px 0px var(--bub);
+                padding: 3px 20px 16px 20px;
                 line-height: 23px;
-                -moz-border-bottom-left-radius: $radius;
-                -webkit-border-bottom-left-radius: $radius;
-                border-bottom-left-radius: $radius;
-                -moz-border-bottom-right-radius: $radius;
-                -webkit-border-bottom-right-radius: $radius;
-                border-bottom-right-radius: $radius;
-                -moz-border-top-right-radius: $radius;
-                -webkit-border-top-right-radius: $radius;
-                border-top-right-radius: $radius;
-                -moz-border-border-top-left-radius: $radius;
-                -webkit-border-border-top-left-radius: $radius;
-                border-top-left-radius: $radius;
+                border-radius: 22px;
                 -webkit-box-decoration-break: clone;
                 -o-box-decoration-break: clone;
                 box-decoration-break: clone;
