@@ -101,7 +101,7 @@ $radius: 30px;
         display: flex;
         flex-wrap: wrap;
         width: calc(100% - (var(--smallmargin) - 10px) * 2);
-        margin: 0px calc(var(--smallmargin) - 10px);
+        margin: 0px var(--margin);
 
         @include sizeone {
 
@@ -177,7 +177,7 @@ $radius: 30px;
             p {
 
                 font-size: var(--size_small);
-                margin-top: calc(var(--smallmargin) + 1px);
+                margin-top: var(--smallmargin);
                 color: var(--bub);
 
                 @include sizeone {
