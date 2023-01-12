@@ -6,7 +6,7 @@ $p100 : calc((100vw - 50px) / 100);
 
     h3 {
 
-        margin-bottom: var(--margin);
+        margin-bottom: var(--smallmargin);
 
     }
 
@@ -18,7 +18,7 @@ $p100 : calc((100vw - 50px) / 100);
         @include sizeone {
 
             margin: var(--margin);
-            margin-top: calc(var(--margin) + 9px);
+            margin-top: calc(var(--smallmargin) + 9px);
             width: calc(100% - (var(--margin) * 2));
 
         }
