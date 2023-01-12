@@ -100,8 +100,8 @@ $radius: 30px;
 
         display: flex;
         flex-wrap: wrap;
-        width: calc(100% - (var(--margin) * 2));
-        margin: 0px var(--margin);
+        width: calc(100% - (calc(var(--margin) - 13px) * 2));
+        margin: 0px calc(var(--margin) - 13px);
 
         @include sizeone {
 
