@@ -10,7 +10,6 @@ const Table = ({ table }) => {
             <div>Date</div>
             <div>Horaires</div>
             <div>Événement</div>
-            <div>Nom</div>
             <div>Prix</div>
         </div>
         {table.table_content.map((line, index) => {

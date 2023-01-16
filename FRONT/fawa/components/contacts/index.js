@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import TextBubble from "../modules/textBubble"
 
@@ -6,9 +6,19 @@ const Contacts = ({ data, setCount, dataInd, change, setChange }) => {
 
     const { bubbles, emails, text } = data
 
+    const [ root, setRoot ] = useState("-370px 0px -370px 0px")
+
+    useEffect(() => {
+
+        window.innerWidth > 800
+        ? setRoot("-370px 0px -370px 0px")
+        : setRoot('0px')
+
+    })
+
     const { ref, inView, entry } = useInView({
         /* Optional options */
-        rootMargin: "-370px 0px -370px 0px",
+        rootMargin: root,
     });
 
     useEffect(() => {

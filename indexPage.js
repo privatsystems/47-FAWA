@@ -134,7 +134,6 @@ export const getServerSideProps = async () => {
     // const site = await axios.get(`http://localhost:8080/${locale}/home.json`)
     const site = await axios.get(`http://localhost:8080/home.json`)
       .then((response) => {
-        console.log(response.data)
         return response.data
     })
 

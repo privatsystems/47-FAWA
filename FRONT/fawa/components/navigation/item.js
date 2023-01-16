@@ -26,7 +26,7 @@ const Item = ({ item, count, setCount, index }) => {
         let offset
         index + 1 == 1
         ? offset = 30
-        : offset = -200
+        : offset = -260
 
         const tl = gsap.timeline()
         .to(window, {

@@ -108,7 +108,7 @@ foreach($sortedEvents as $block){
 
         $textObject = (object)[];
         $textObject->name = $block->name()->value();
-        $textObject->date = $block->date()->value();
+        $textObject->date = $block->date_e()->value();
         $textObject->horaire = $block->horaire()->value();
         $textObject->type = $block->type()->value();
         $textObject->prix = $block->prix()->value();

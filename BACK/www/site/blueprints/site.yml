@@ -43,28 +43,6 @@ tabs:
               type: writer
               width: 3/4
               required: true
-            rest_part_two_color: 
-              label: couleur de texte
-              type: radio
-              options:
-                - value: '#3C2109' 
-                  text: '<div style="background-color: #3C2109; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFFF4A' 
-                  text: '<div style="background-color: #FFFF4A; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#005500' 
-                  text: '<div style="background-color: #005500; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#00B140' 
-                  text: '<div style="background-color: #00B140; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FF4500' 
-                  text: '<div style="background-color: #FF4500; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#83CFFF' 
-                  text: '<div style="background-color: #83CFFF; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFD8E5' 
-                  text: '<div style="background-color: #FFD8E5; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFFFFF' 
-                  text: '<div style="background-color: #FFFFFF; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-              required: true
-              width: 1/4
       - width: 1/1
         type: fields
         fields:
@@ -99,7 +77,7 @@ tabs:
                   type: text
                   width: 1/1
                   required: true
-                date: 
+                date_e: 
                   label: Date
                   type: date
                   display: DD MMM YYYY
@@ -114,7 +92,6 @@ tabs:
                   label: Type
                   type: text
                   width: 1/4
-                  required: true
                 prix:
                   label: Prix
                   type: text 
@@ -125,50 +102,6 @@ tabs:
                   type: url 
                   width: 1/4  
                   required: true
-            evnt_part_two_color:  
-              label: couleur du texte
-              type: radio
-              options:
-                - value: '#3C2109' 
-                  text: '<div style="background-color: #3C2109; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFFF4A' 
-                  text: '<div style="background-color: #FFFF4A; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#005500' 
-                  text: '<div style="background-color: #005500; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#00B140' 
-                  text: '<div style="background-color: #00B140; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FF4500' 
-                  text: '<div style="background-color: #FF4500; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#83CFFF' 
-                  text: '<div style="background-color: #83CFFF; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFD8E5' 
-                  text: '<div style="background-color: #FFD8E5; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFFFFF' 
-                  text: '<div style="background-color: #FFFFFF; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-              width: 1/2
-              required: true
-            evnt_part_two_back:  
-              label: couleur du back
-              type: radio
-              options:
-                - value: '#3C2109' 
-                  text: '<div style="background-color: #3C2109; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFFF4A' 
-                  text: '<div style="background-color: #FFFF4A; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#005500' 
-                  text: '<div style="background-color: #005500; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#00B140' 
-                  text: '<div style="background-color: #00B140; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FF4500' 
-                  text: '<div style="background-color: #FF4500; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#83CFFF' 
-                  text: '<div style="background-color: #83CFFF; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFD8E5' 
-                  text: '<div style="background-color: #FFD8E5; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-                - value: '#FFFFFF' 
-                  text: '<div style="background-color: #FFFFFF; border-radius: 10px; border: 1px solid #C3C3C3; height: 20px; margin-right: 10px;">'
-              width: 1/2
-              required: true
 
       - width: 1/1
         type: fields

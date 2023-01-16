@@ -6,7 +6,8 @@
 
         @include sizeone {
 
-            margin-top: calc(var(--smallmargin) + 14px);
+            margin-top: var(--smallmargin);
+            margin-bottom: var(--smallmargin);
 
         }
 

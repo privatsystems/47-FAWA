@@ -31,10 +31,9 @@ const TableLine = ({ line, color, back }) => {
     onMouseLeave={handleMouseLeave}
     >
         
-            <div>{format(new Date(date), 'eeee dd MMMM', {awareOfUnicodeTokens: true, locale: fr})}</div>
+            <div>{format(new Date(date), 'EEEEE dd.MM', {awareOfUnicodeTokens: true, locale: fr})}</div>
             <div>{horaire}</div>
-            <div>{type}</div>
-            <div>{name}</div>
+            <div>{name}<span className='type'>{type}</span> </div>
             <div>{prix}</div>
     </div></a>
 }

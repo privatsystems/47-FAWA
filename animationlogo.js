@@ -40,8 +40,6 @@ export default function Home({ data }) {
     ? setMob(true)
     : setMob(false)
 
-    console.log(window?.innerHeight, mob)
-
   }, [])
 
   useEffect(() => {

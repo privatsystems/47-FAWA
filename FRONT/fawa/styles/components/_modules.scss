@@ -55,16 +55,21 @@ $radius: 30px;
                 -webkit-box-decoration-break: clone;
                 -o-box-decoration-break: clone;
                 box-decoration-break: clone;
+
+                @include sizeone {
+
+                    padding: 3px 7px 8px 7px;
+                    border-radius: 10px;
+
+                }
                 
             }
 
 
             @include sizeone {
 
-                margin: 0px calc(var(--smallmargin) + 10px);
-                margin-right: 0px;
-                padding: 4px 14px 7px 12px;
-                border-radius: 0px;
+
+                // border-radius: 0px;
                 line-height: 1.5;
 
             }
@@ -100,8 +105,8 @@ $radius: 30px;
 
         display: flex;
         flex-wrap: wrap;
-        width: calc(100% - (calc(var(--margin) - 13px) * 2));
-        margin: 0px calc(var(--margin) - 13px);
+        width: calc(100% - (var(--margin)));
+        margin: 0px calc(var(--margin) / 2);
 
         @include sizeone {
 
@@ -110,6 +115,8 @@ $radius: 30px;
         }
 
         .illustration_wrapper {
+
+            margin: calc(var(--margin) / 2);
 
             img {
 
@@ -126,7 +133,7 @@ $radius: 30px;
 
             &.med {
                 
-                width: 50%;
+                width: calc(50% - var(--margin));
 
                 img {
 
@@ -151,13 +158,11 @@ $radius: 30px;
 
             }
 
-            padding: 13px;
-
             @include sizeone {
 
-                width: 100%!important;
+                width: calc(100% - var(--margin))!important;
                 padding: 0px 0px;
-                margin-top: var(--smallmargin)!important;
+                margin-top: var(--margin)!important;
     
             }
 
@@ -182,13 +187,19 @@ $radius: 30px;
 
                 @include sizeone {
 
-                    margin-top: var(--smallmargin);
+                    margin-top: var(--margin);
 
                 }
 
                 &:first-child {
 
                     margin-top: calc(var(--smallmargin) - 1px);
+
+                    @include sizeone {
+
+                        margin-top: var(--margin);
+
+                    }
 
                 }
 

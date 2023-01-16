@@ -35,8 +35,8 @@ export default function Home({ data }) {
         // entries[0].target.dataset.ind == 3 && console.log('3', entries[0])
         // console.log('3', entries[0])
         if (entries[0].isIntersecting) {
-            console.log(entries[0]?.target)
-            if(!entries[0]?.target.classList.contains('select')) {
+
+          if(!entries[0]?.target.classList.contains('select')) {
                 
                 const index = entries[0]?.target.dataset.ind
                 document.querySelector('.part_content.select')?.classList.remove('select')

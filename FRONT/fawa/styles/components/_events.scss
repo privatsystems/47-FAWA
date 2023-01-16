@@ -1,4 +1,4 @@
-$p100 : calc((100vw - 50px) / 100);
+$p100 : calc((100vw - (var(--margin) * 2)) / 100);
 
 .event, .events {
 
@@ -13,12 +13,13 @@ $p100 : calc((100vw - 50px) / 100);
     &_table {
 
         margin: var(--margin);
-        width: calc(100vw - calc(var(--margi) * 2));
+        width: calc(100vw - calc(var(--margin) * 2));
 
         @include sizeone {
 
             margin: var(--margin);
             margin-top: calc(var(--smallmargin) + 9px);
+            margin-bottom: var(--smallmargin);
             width: calc(100% - (var(--margin) * 2));
 
         }
@@ -26,7 +27,7 @@ $p100 : calc((100vw - 50px) / 100);
         &_line {
 
             display: grid;
-            grid-template-columns: calc($p100 * 15) calc($p100 * 10) calc($p100 * 20) calc($p100 * 50) calc($p100 * 5);
+            grid-template-columns: calc($p100 * 10) calc($p100 * 15) calc($p100 * 65) calc($p100 * 10);
             padding: 5px;
             color: var(--color);
             border-bottom: 2px solid var(--color);
@@ -45,6 +46,25 @@ $p100 : calc((100vw - 50px) / 100);
                 color: var(--color);
 
                 border-top: 2px solid var(--color);
+
+            }
+            
+            .type {
+
+                font-size: 16px;
+                padding: 1px 3px;
+                background-color: var(--color);
+                color: var(--back);
+                border-radius: 5px;
+                margin: 5px 15px;
+                position: relative;
+                top: -2px;
+
+            }
+
+            &:hover .type {
+
+                color: var(--bub);
 
             }
         }
