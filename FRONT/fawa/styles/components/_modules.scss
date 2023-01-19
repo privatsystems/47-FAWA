@@ -21,7 +21,7 @@ $radius: 30px;
         @include sizeone {
 
             width: calc(100% - (var(--margin) * 2));
-            margin: calc(var(--smallmargin) + 25px) var(--margin);
+            margin: calc(var(--smallmargin)) var(--margin);
 
         }
     
@@ -70,7 +70,7 @@ $radius: 30px;
 
 
                 // border-radius: 0px;
-                line-height: 1.5;
+                line-height: 1.4;
 
             }
         }
@@ -81,7 +81,7 @@ $radius: 30px;
 
             @include sizeone {
 
-                margin-top: calc(var(--smallmargin) + 25px);
+                margin-top: calc(var(--smallmargin) + 13px);
 
             }
 
@@ -105,8 +105,8 @@ $radius: 30px;
 
         display: flex;
         flex-wrap: wrap;
-        width: calc(100% - (var(--margin)));
-        margin: 0px calc(var(--margin) / 2);
+        width: calc(100% - (var(--smallmargin)));
+        margin: 0px calc(var(--smallmargin) / 2);
 
         @include sizeone {
 
@@ -116,7 +116,7 @@ $radius: 30px;
 
         .illustration_wrapper {
 
-            margin: calc(var(--margin) / 2);
+            margin: calc(var(--smallmargin) / 2);
 
             img {
 
@@ -133,7 +133,7 @@ $radius: 30px;
 
             &.med {
                 
-                width: calc(50% - var(--margin));
+                width: calc(50% - var(--smallmargin));
 
                 img {
 

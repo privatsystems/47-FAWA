@@ -81,7 +81,11 @@ $p100 : calc((100vw - (var(--margin) * 2)) / 100);
 
     .illustration_wrapper:first-child {
 
-        margin-top: 0px!important;
+        @include mobile {
+
+            margin-top: 0px!important;
+
+        }
 
     }
 
