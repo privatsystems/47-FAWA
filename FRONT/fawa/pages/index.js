@@ -11,6 +11,8 @@ import { navigationData } from '../assets/data/navigationData'
 import Events from '../components/events'
 import Contacts from '../components/contacts'
 import { useInView } from 'react-intersection-observer';
+import FaMob from '../components/logo/faMob'
+import WaMob from '../components/logo/waMob'
 
 export default function Home({ data }) {
 
@@ -18,39 +20,14 @@ export default function Home({ data }) {
   const [count, setCount] = useState(1)
   const [change, setChange] = useState(1)
 
-
   const content = useRef()
   const top = useRef()
   const bottom = useRef()
 
-  const options = {
-    root: null,
-    rootMargin: '100px',
-     threshold: 0.01
-}
+  useEffect(() => {
+    console.log('index', count)
+  },[count, change])
 
-  const refSection = useCallback( 
-    (node) => {
-    observer.current = new IntersectionObserver((entries) => {
-        // entries[0].target.dataset.ind == 3 && console.log('3', entries[0])
-        // console.log('3', entries[0])
-        if (entries[0].isIntersecting) {
-
-          if(!entries[0]?.target.classList.contains('select')) {
-                
-                const index = entries[0]?.target.dataset.ind
-                document.querySelector('.part_content.select')?.classList.remove('select')
-                setCount(index)
-                document.querySelector(`.navigation_item[data-menu="${index}"]`)?.classList.add('select')
-                entries[0]?.target.classList.add('select')
-                
-            }
-        }
-    }, options)
-    if (node) 
-        observer.current.observe(node)
-    
-  },[])
 
   useEffect(() => {
 
@@ -92,6 +69,7 @@ export default function Home({ data }) {
     window?.innerWidth < 800
     ? setMob(true)
     : setMob(false)
+    console.log('mob', mob)
 
   }, [])
 
@@ -117,8 +95,8 @@ export default function Home({ data }) {
                 <div 
                 className="sub_wrapper"
                 >
-                  <div><Fa /></div>
-                  <div><Wa /></div>
+                  {!mob ? <div><Fa /></div> : <div><FaMob /></div>}
+                  {!mob ? <div><Wa /></div> : <div><WaMob /></div>}
                 </div>
             </div>
             <div className='content'>
@@ -131,8 +109,8 @@ export default function Home({ data }) {
                 <div 
                 className="sub_wrapper"
                 >
-                  <div><Fa /></div>
-                  <div><Wa /></div>
+                  {!mob ? <div><Fa /></div> : <div><FaMob /></div>}
+                  {!mob ? <div><Wa /></div> : <div><WaMob /></div>}
                 </div>
             </div>
         </section>

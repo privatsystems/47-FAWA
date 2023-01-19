@@ -1,6 +1,17 @@
+import { useEffect, useState } from "react"
 import TableLine from "./tableLine"
 
 const Table = ({ table }) => {
+
+    const [mob, setMob] = useState(false)
+
+    useEffect(() => {
+
+        window?.innerWidth > 800 
+        ? setMob(false)
+        : setMob(true)
+
+    }, [])
 
     return <div className='event_table'>
         <h3>
@@ -8,7 +19,7 @@ const Table = ({ table }) => {
         </h3>
         <div className='event_table_line legend'>
             <div>Date</div>
-            <div>Horaires</div>
+            {!mob && <div>Horaires</div>}
             <div>Événement</div>
             <div>Prix</div>
         </div>

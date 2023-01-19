@@ -1,6 +1,6 @@
 import { format, isAfter } from 'date-fns'
 import { fr } from 'date-fns/locale'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const TableLine = ({ line, color, back }) => {
 
@@ -10,6 +10,16 @@ const TableLine = ({ line, color, back }) => {
     
     const today = Date.now()
     const dateEvent = new Date(date)
+
+    const [mob, setMob] = useState(false)
+
+    useEffect(() => {
+
+        window?.innerWidth > 800 
+        ? setMob(false)
+        : setMob(true)
+
+    }, [])
 
     const handleMouseEnter = () => {
 
@@ -32,7 +42,7 @@ const TableLine = ({ line, color, back }) => {
     >
         
             <div>{format(new Date(date), 'EEEEE dd.MM', {awareOfUnicodeTokens: true, locale: fr})}</div>
-            <div>{horaire}</div>
+            {!mob && <div>{horaire}</div>}
             <div>{name}<span className='type'>{type}</span> </div>
             <div>{prix}</div>
     </div></a>

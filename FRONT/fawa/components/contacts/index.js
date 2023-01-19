@@ -12,7 +12,7 @@ const Contacts = ({ data, setCount, dataInd, change, setChange }) => {
 
         window.innerWidth > 800
         ? setRoot("-370px 0px -370px 0px")
-        : setRoot('0px')
+        : setRoot("-300px 0px -300px 0px")
 
     })
 
@@ -23,12 +23,13 @@ const Contacts = ({ data, setCount, dataInd, change, setChange }) => {
 
     useEffect(() => {
 
+        console.log('inviex', dataInd)
         inView && setCount(dataInd)
         setChange(dataInd)
 
     }, [inView, change])
 
-    return <div className='contacts' ref={ref}>
+    return <div className={`${inView} contacts`} ref={ref}>
 
         <div className='bubles'>
             {bubbles.map((bubble, index) => {

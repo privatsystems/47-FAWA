@@ -33,6 +33,12 @@ $p100 : calc((100vw - (var(--margin) * 2)) / 100);
             border-bottom: 2px solid var(--color);
             background-color: var(--back);
 
+            @include sizeone {
+
+                grid-template-columns: calc($p100 * 20) calc($p100 * 60) calc($p100 * 20);
+
+            }
+
             &:hover {
 
                 background-color: var(--bub);

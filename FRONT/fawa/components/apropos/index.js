@@ -13,7 +13,7 @@ const Apropos = ({ data, setCount, dataInd, change, setChange }) => {
 
         window.innerWidth > 800
         ? setRoot("-370px 0px -370px 0px")
-        : setRoot('0px')
+        : setRoot("-300px 0px -300px 0px")
 
     })
 
