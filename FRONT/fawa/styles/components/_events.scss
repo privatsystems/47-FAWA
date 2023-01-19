@@ -69,6 +69,7 @@ $p100 : calc((100vw - (var(--margin) * 2)) / 100);
                 @include sizeone {
 
                     font-size:(--size_small);
+                    top: 0px;
 
                 }
 
