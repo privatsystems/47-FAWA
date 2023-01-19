@@ -19,11 +19,11 @@
 
         --size_big: 2rem;
         --size_courant: 0.7rem;
-        --size_small: 1.05rem;
+        --size_small: 1.35rem;
 
 
-        --interligne : 1.2;
-        --interlettrage_small : 0.1px;
+        --interligne : 1.26;
+        --interlettrage_small : 0.2px;
 
         --margin: 15px;
         --smallmargin: 30px;
@@ -70,5 +70,11 @@ h3 {
 .restaurant, .events, .contacts {
 
     padding-top: 250px;
+
+    @include sizeone {
+
+        padding-top: 80px;
+
+    }
 
 }

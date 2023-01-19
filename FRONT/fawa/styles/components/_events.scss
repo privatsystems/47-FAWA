@@ -66,6 +66,12 @@ $p100 : calc((100vw - (var(--margin) * 2)) / 100);
                 position: relative;
                 top: -2px;
 
+                @include sizeone {
+
+                    font-size:(--size_small);
+
+                }
+
             }
 
             &:hover .type {
@@ -81,7 +87,7 @@ $p100 : calc((100vw - (var(--margin) * 2)) / 100);
 
     .illustration_wrapper:first-child {
 
-        @include mobile {
+        @include sizeone {
 
             margin-top: 0px!important;
 
