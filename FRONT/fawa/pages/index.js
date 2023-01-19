@@ -66,7 +66,7 @@ export default function Home({ data }) {
 
   useEffect(() => {
 
-    window?.innerWidth < 800
+    window?.innerWidth < 900
     ? setMob(true)
     : setMob(false)
     console.log('mob', mob)

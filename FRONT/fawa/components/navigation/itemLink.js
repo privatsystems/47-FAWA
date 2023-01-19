@@ -19,7 +19,7 @@ const ItemLink = ({ color, back, bub, label, mobLabel,  link }) => {
 
     useEffect(() => {
 
-        window.innerWidth > 800
+        window.innerWidth > 900
         ? setMob(false) : setMob(true)
 
     }, [])

@@ -12,7 +12,7 @@ const Events = ({ data, setCount, dataInd, change, setChange }) => {
 
     useEffect(() => {
 
-        window.innerWidth > 800
+        window.innerWidth > 900
         ? setRoot("-370px 0px -370px 0px")
         : setRoot("-300px 0px -300px 0px")
 

@@ -7,7 +7,7 @@ const Table = ({ table }) => {
 
     useEffect(() => {
 
-        window?.innerWidth > 800 
+        window?.innerWidth > 900 
         ? setMob(false)
         : setMob(true)
 
