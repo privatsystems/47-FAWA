@@ -48,17 +48,26 @@ export default function Home({ data }) {
     const scroll = container?.getBoundingClientRect().top * -1
     const limit = container?.getBoundingClientRect().height
 
-    if(scroll >= limit - windowHeight - 2) {
+    if(window.innerWidth > 800) {
 
-      window.scrollTo({top: 6, left: 0})
+      if(scroll >= limit - windowHeight - 2) {
+
+        window.scrollTo({top: 6, left: 0})
+  
+      }
+  
+      if(scroll < 2) {
+  
+        window.scrollTo({top: limit - windowHeight - 6, left: 0})
+  
+      }
+
+    } else {
+
+      
 
     }
-
-    if(scroll < 2) {
-
-      window.scrollTo({top: limit - windowHeight - 6, left: 0})
-
-    }
+    
 
   }
 
