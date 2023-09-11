@@ -7,15 +7,15 @@ const Restaurant = ({ data, setCount, dataInd, change, setChange }) => {
 
     const { bubbles, images, horaires } = data
 
-    const [ root, setRoot ] = useState("-370px 0px -370px 0px")
+    const [root, setRoot] = useState("-370px 0px -370px 0px")
 
     useEffect(() => {
 
         window.innerWidth > 800
-        ? setRoot("-370px 0px -370px 0px")
-        : setRoot("-300px 0px -300px 0px")
+            ? setRoot("-370px 0px -370px 0px")
+            : setRoot("-300px 0px -300px 0px")
 
-    })
+    }, [])
 
     const { ref, inView, entry } = useInView({
         /* Optional options */
@@ -33,12 +33,12 @@ const Restaurant = ({ data, setCount, dataInd, change, setChange }) => {
 
         <div className='bubles'>
             {bubbles.map((bubble, index) => {
-                return <TextBubble key={`buble-${index}-${bubble.text}`} bubble={bubble}/>
+                return <TextBubble key={`buble-${index}-${bubble.text}`} bubble={bubble} />
             })}
         </div>
 
-        <div 
-        className='horaire'
+        <div
+            className='horaire'
         >
             <h3>Le Restaurant est ouvert</h3>
             <div className='text_content' dangerouslySetInnerHTML={{ __html: horaires.text }}></div>
@@ -46,10 +46,10 @@ const Restaurant = ({ data, setCount, dataInd, change, setChange }) => {
 
         <div className='images'>
             {images.map((image, index) => {
-                return <ImageWrapper 
-                key={`illl-${index}${image.src}`} 
-                image={image}
-                index={index}
+                return <ImageWrapper
+                    key={`illl-${index}${image.src}`}
+                    image={image}
+                    index={index}
                 />
             })}
         </div>

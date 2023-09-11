@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import '../styles/globals.scss'
 import gsap from "gsap"
-import {ScrollToPlugin} from 'gsap/dist/ScrollToPlugin'
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 
 function MyApp({ Component, pageProps }) {
 
@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
     gsap.registerPlugin(ScrollToPlugin);
 
   }, [])
+  console.log('app')
   return <Component {...pageProps} />
 }
 

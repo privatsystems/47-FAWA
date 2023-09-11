@@ -8,15 +8,15 @@ const Events = ({ data, setCount, dataInd, change, setChange }) => {
 
     const { bubbles, images, table } = data
 
-    const [ root, setRoot ] = useState("-370px 0px -370px 0px")
+    const [root, setRoot] = useState("-370px 0px -370px 0px")
 
     useEffect(() => {
 
         window.innerWidth > 900
-        ? setRoot("-370px 0px -370px 0px")
-        : setRoot("-300px 0px -300px 0px")
+            ? setRoot("-370px 0px -370px 0px")
+            : setRoot("-300px 0px -300px 0px")
 
-    })
+    }, [])
 
     const { ref, inView, entry } = useInView({
         /* Optional options */
@@ -35,16 +35,16 @@ const Events = ({ data, setCount, dataInd, change, setChange }) => {
 
         <div className='bubles'>
             {bubbles.map((bubble, index) => {
-                return <TextBubble key={`buble-${index}-${bubble.text}`} bubble={bubble}/>
+                return <TextBubble key={`buble-${index}-${bubble.text}`} bubble={bubble} />
             })}
         </div>
-        <Table table={table}/>
+        <Table table={table} />
         <div className='images'>
             {images.map((image, index) => {
-                return <ImageWrapper 
-                key={`illl-${index}-${image.src}`} 
-                image={image}
-                index={index}
+                return <ImageWrapper
+                    key={`illl-${index}-${image.src}`}
+                    image={image}
+                    index={index}
                 />
             })}
         </div>
