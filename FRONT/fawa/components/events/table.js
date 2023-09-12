@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react"
 import TableLine from "./tableLine"
+import { BrowserView } from 'react-device-detect';
 
 const Table = ({ table }) => {
 
-    const [mob, setMob] = useState(false)
-
-    useEffect(() => {
-
-        window?.innerWidth > 900 
-        ? setMob(false)
-        : setMob(true)
-
-    }, [])
+    console.log(table)
 
     return <div className='event_table'>
         <h3>
@@ -19,16 +11,18 @@ const Table = ({ table }) => {
         </h3>
         <div className='event_table_line legend'>
             <div>Date</div>
-            {!mob && <div>Horaires</div>}
+            <BrowserView>
+                <div>Horaires</div>
+            </BrowserView>
             <div>Événement</div>
-            <div>Prix</div>
+            {/* <div>Prix</div> */}
         </div>
         {table.table_content.map((line, index) => {
-            return <TableLine 
-            key={line.name + line.horaire + index} 
-            color={table.color} 
-            back= {table.back}
-            line={line} />
+            return <TableLine
+                key={line.name + line.horaire + index}
+                color={table.color}
+                back={table.back}
+                line={line} />
         })}
     </div>
 
