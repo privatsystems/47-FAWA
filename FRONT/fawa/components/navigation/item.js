@@ -1,6 +1,4 @@
-import classNames from "class-names"
 import gsap from 'gsap'
-import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { useState } from "react"
 import { navigationData } from "../../assets/data/navigationData"
 

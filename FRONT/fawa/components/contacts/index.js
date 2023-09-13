@@ -16,14 +16,13 @@ const Contacts = ({ data, setCount, dataInd, change, setChange }) => {
 
     }, [])
 
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         /* Optional options */
         rootMargin: root,
     });
 
     useEffect(() => {
 
-        console.log('inviex', dataInd)
         inView && setCount(dataInd)
         setChange(dataInd)
 

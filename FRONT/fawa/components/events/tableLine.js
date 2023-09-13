@@ -1,15 +1,22 @@
 import { format, isAfter } from 'date-fns'
 import { fr } from 'date-fns/locale'
-import { BrowserView } from 'react-device-detect';
+import { useEffect, useState } from 'react'
 
 const TableLine = ({ line, color, back }) => {
 
     const { name, horaire, type, date, link } = line
 
+    const [mob, setMob] = useState(false)
+
     const today = Date.now()
     const dateEvent = new Date(date)
 
-    console.log('date', date)
+    useEffect(() => {
+
+        window.innerWidth < 900
+            ? setMob(true)
+            : setMob(false)
+    }, [])
 
     if (isAfter(today, dateEvent)) return
 
@@ -18,9 +25,7 @@ const TableLine = ({ line, color, back }) => {
     >
 
         <div>{date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>
-        <BrowserView>
-            <div>{horaire && horaire}</div>
-        </BrowserView>
+        {!mob && <div>{horaire && horaire}</div>}
         <div>{name && name}{type && <span className='type'>{type}</span>} </div>
         {/* <div>{prix}</div> */}
     </div></a>

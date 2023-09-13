@@ -82,26 +82,18 @@ tabs:
                   type: date
                   display: DD MMM YYYY
                   width: 1/4
-                  required: true
                 horaire:
                   label: Horaires
                   type: text
                   width: 1/4
-                  required: true
                 type:
                   label: Type
                   type: text
                   width: 1/4
-                prix:
-                  label: Prix
-                  type: text 
-                  width: 1/4  
-                  required: true
                 link:
                   label: Link
                   type: url 
                   width: 1/4  
-                  required: true
 
       - width: 1/1
         type: fields
