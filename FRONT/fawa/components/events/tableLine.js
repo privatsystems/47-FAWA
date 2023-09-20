@@ -2,37 +2,59 @@ import { format, isAfter } from 'date-fns'
 import { fr } from 'date-fns/locale'
 import { useEffect, useState } from 'react'
 
-const TableLine = ({ line, color, back }) => {
-
-    const { name, horaire, type, date, link } = line
-
-    const [mob, setMob] = useState(false)
-
-    const today = Date.now()
-    const dateEvent = new Date(date)
+const TableLine = ({ line }) => {
+    const { name, horaire, type, date, link } = line;
+    const [mob, setMob] = useState(false);
+    const today = Date.now();
+    const dateEvent = new Date(date);
 
     useEffect(() => {
+        const handleResize = () => {
+            setMob(window.innerWidth < 900);
+        };
 
-        window.innerWidth < 900
-            ? setMob(true)
-            : setMob(false)
-    }, [])
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Initial check on component mount
 
-    if (isAfter(today, dateEvent)) return
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-    return <div className='event_table_line'>
-        {link ? <a href={`${link}`} target="_blank" rel="noreferrer">
-            <div>{date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>
-            {!mob && <div>{horaire && horaire}</div>}
-            <div>{name && name}{type && <span className='type'>{type}</span>}</div>
-            {/* <div>{prix}</div> */}
-        </a>
-            : <>
-                <div>{date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>
-                {!mob && <div>{horaire && horaire}</div>}
-                <div>{name && name}{type && <span className='type'>{type}</span>}</div>
-                {/* <div>{prix}</div> */}
-            </>}
-    </div>
-}
-export default TableLine
+    if (isAfter(today, dateEvent)) return null;
+
+    return (
+        <div className='event_table_line'>
+            {link ? (
+                <a href={link} target="_blank" rel="noreferrer">
+                    <div>
+                        {date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
+                    </div>
+                    {!mob && <div>{horaire && horaire}</div>}
+                    <div>
+                        {name && name}
+                        {type && <span className='type'>{type}</span>}
+                    </div>
+                </a>
+            ) : (
+                <>
+                    <div>
+                        {date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
+                    </div>
+                    {!mob && <div>{horaire && horaire}</div>}
+                    <div>
+                        {name && name}
+                        {type && <span className='type'>{type}</span>}
+                    </div>
+                </>
+            )}
+        </div>
+    );
+};
+
+export default TableLine;
+
+
+
+
+
