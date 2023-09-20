@@ -112,6 +112,7 @@ foreach($sortedEvents as $block){
         $textObject->horaire = $block->horaire()->value();
         $textObject->type = $block->type()->value();
         $textObject->prix = $block->prix()->value();
+        $textObject->link = $block->link()->value();
         $textObject->id = $block->id();
 
         array_push($events_table, $textObject);

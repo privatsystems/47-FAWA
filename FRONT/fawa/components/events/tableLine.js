@@ -12,6 +12,7 @@ const TableLine = ({ line }) => {
         const handleResize = () => {
             setMob(window.innerWidth < 900);
         };
+        console.log(link);
 
         window.addEventListener('resize', handleResize);
         handleResize(); // Initial check on component mount
@@ -19,14 +20,15 @@ const TableLine = ({ line }) => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
+
     }, []);
 
     if (isAfter(today, dateEvent)) return null;
 
-    return (
-        <div className='event_table_line'>
-            {link ? (
-                <a href={link} target="_blank" rel="noreferrer">
+    return (<>
+        {link ? (
+            <a href={link} target="_blank" rel="noreferrer">
+                <div className='event_table_line'>
                     <div>
                         {date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
                     </div>
@@ -35,21 +37,21 @@ const TableLine = ({ line }) => {
                         {name && name}
                         {type && <span className='type'>{type}</span>}
                     </div>
-                </a>
-            ) : (
-                <>
-                    <div>
-                        {date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
-                    </div>
-                    {!mob && <div>{horaire && horaire}</div>}
-                    <div>
-                        {name && name}
-                        {type && <span className='type'>{type}</span>}
-                    </div>
-                </>
-            )}
-        </div>
-    );
+                </div>
+            </a>
+        ) : (
+            <div className='event_table_line'>
+                <div>
+                    {date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
+                </div>
+                {!mob && <div>{horaire && horaire}</div>}
+                <div>
+                    {name && name}
+                    {type && <span className='type'>{type}</span>}
+                </div>
+            </div>
+        )}
+    </>);
 };
 
 export default TableLine;
