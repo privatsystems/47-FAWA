@@ -20,14 +20,19 @@ const TableLine = ({ line, color, back }) => {
 
     if (isAfter(today, dateEvent)) return
 
-    return <a href={`${link}`} target="_blank" rel="noreferrer"><div
-        className='event_table_line'
-    >
-
-        <div>{date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>
-        {!mob && <div>{horaire && horaire}</div>}
-        <div>{name && name}{type && <span className='type'>{type}</span>} </div>
-        {/* <div>{prix}</div> */}
-    </div></a>
+    return <div className='event_table_line'>
+        {link ? <a href={`${link}`} target="_blank" rel="noreferrer">
+            <div>{date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>
+            {!mob && <div>{horaire && horaire}</div>}
+            <div>{name && name}{type && <span className='type'>{type}</span>}</div>
+            {/* <div>{prix}</div> */}
+        </a>
+            : <>
+                <div>{date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>
+                {!mob && <div>{horaire && horaire}</div>}
+                <div>{name && name}{type && <span className='type'>{type}</span>}</div>
+                {/* <div>{prix}</div> */}
+            </>}
+    </div>
 }
 export default TableLine
