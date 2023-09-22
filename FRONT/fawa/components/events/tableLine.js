@@ -3,7 +3,7 @@ import { fr } from 'date-fns/locale'
 import { useEffect, useState } from 'react'
 
 const TableLine = ({ line }) => {
-    const { name, horaire, type, date, link } = line;
+    const { name, horaire, type, date, link, prix } = line;
     const [mob, setMob] = useState(false);
     const today = Date.now();
     const dateEvent = new Date(date);
@@ -36,6 +36,7 @@ const TableLine = ({ line }) => {
                     <div>
                         {name && name}
                         {type && <span className='type'>{type}</span>}
+                        {prix && <div>{prix}</div>}
                     </div>
                 </div>
             </a>
@@ -48,6 +49,7 @@ const TableLine = ({ line }) => {
                 <div>
                     {name && name}
                     {type && <span className='type'>{type}</span>}
+                    {prix && <div>{prix}</div>}
                 </div>
             </div>
         )}

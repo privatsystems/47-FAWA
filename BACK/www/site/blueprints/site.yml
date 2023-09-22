@@ -69,7 +69,7 @@ tabs:
             evnt_part_two:
               label: Tableau des évènements
               type: structure
-              sortBy: date desc
+              sortable: true
               width: 1/1
               fields: 
                 name:
@@ -88,6 +88,10 @@ tabs:
                   width: 1/4
                 type:
                   label: Type
+                  type: text
+                  width: 1/4
+                prix:
+                  label: Prix
                   type: text
                   width: 1/4
                 link:
