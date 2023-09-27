@@ -11,14 +11,15 @@ import Events from '../components/events'
 import Contacts from '../components/contacts'
 import FaMob from '../components/logo/faMob'
 import WaMob from '../components/logo/waMob'
+import { detect } from 'detect-browser';
 
 
 export default function Home({ data }) {
 
   const { apropos, restaurant, events, contacts, infos, seo } = data
   const [count, setCount] = useState(1)
-  const [change, setChange] = useState(1)
   const [mob, setMob] = useState(false)
+  const [browser, setBrowser] = useState('none')
 
   const content = useRef()
   const top = useRef()
@@ -27,7 +28,7 @@ export default function Home({ data }) {
 
   useEffect(() => {
 
-    console.log(seo)
+    setBrowser(detect())
 
     window.addEventListener('scroll', handleScroll)
 
@@ -55,9 +56,27 @@ export default function Home({ data }) {
 
   }
 
+  const sectionRefs = {
+    1: useRef(null),
+    2: useRef(null),
+    3: useRef(null),
+    4: useRef(null),
+  };
+
   const handleScroll = () => {
 
-    const windowHeight = window.innerHeight
+    const windowHeight = window.innerHeight;
+
+    for (let i = 1; i <= 4; i++) {
+      const sectionRef = sectionRefs[i].current;
+      if (sectionRef) {
+        const { top, bottom } = sectionRef.getBoundingClientRect();
+        if (top < windowHeight / 2 && bottom > windowHeight / 2) {
+          setCount(i);
+          break;
+        }
+      }
+    }
 
     const container = content.current
     const scroll = container?.getBoundingClientRect().top * -1
@@ -90,11 +109,13 @@ export default function Home({ data }) {
     }
 
 
+
+
   }
 
 
   return (
-    <div className={styles.container}>
+    <div className={browser.name + ' ' + browser.os}>
 
       <Head>
         <title>{seo.title_site + " | " + seo.base_site}</title>
@@ -131,10 +152,10 @@ export default function Home({ data }) {
             </div>
           </div>
           <div className='content'>
-            <div className='part_content' data-ind={1}><Apropos data={apropos} setCount={setCount} setChange={setChange} change={change} dataInd={1} /></div>
-            <div className='part_content' data-ind={2}><Restaurant data={restaurant} setCount={setCount} setChange={setChange} change={change} dataInd={2} /></div>
-            <div className='part_content' data-ind={3}><Events data={events} setCount={setCount} setChange={setChange} change={change} dataInd={3} /></div>
-            <div className='part_content' data-ind={4}><Contacts data={contacts} setCount={setCount} setChange={setChange} change={change} dataInd={4} /></div>
+            <div className='part_content' data-ind={1} ref={sectionRefs[1]}><Apropos data={apropos} /></div>
+            <div className='part_content' data-ind={2} ref={sectionRefs[2]} ><Restaurant data={restaurant} /></div>
+            <div className='part_content' data-ind={3} ref={sectionRefs[3]} ><Events data={events} /></div>
+            <div className='part_content' data-ind={4} ref={sectionRefs[4]} ><Contacts data={contacts} /></div>
           </div>
           <div className='part bot' ref={bottom}>
             <div

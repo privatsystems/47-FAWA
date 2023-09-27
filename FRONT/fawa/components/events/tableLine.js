@@ -36,7 +36,7 @@ const TableLine = ({ line }) => {
                     <div>
                         {name && name}
                         {type && <span className='type'>{type}</span>}
-                        {prix && <div>{prix}</div>}
+                        {!mob && prix && <div>{prix}</div>}
                     </div>
                 </div>
             </a>

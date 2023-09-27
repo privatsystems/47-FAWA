@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
     gsap.registerPlugin(ScrollToPlugin);
 
   }, [])
-  console.log('app')
+
   return <Component {...pageProps} />
 }
 

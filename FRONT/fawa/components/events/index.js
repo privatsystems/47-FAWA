@@ -4,33 +4,11 @@ import ImageWrapper from "../modules/imageWrapper"
 import TextBubble from "../modules/textBubble"
 import Table from "./table"
 
-const Events = ({ data, setCount, dataInd, change, setChange }) => {
+const Events = ({ data }) => {
 
     const { bubbles, images, table } = data
 
-    const [root, setRoot] = useState("-370px 0px -370px 0px")
-
-    useEffect(() => {
-
-        window.innerWidth > 800
-            ? setRoot("-370px 0px -370px 0px")
-            : setRoot("-300px 0px -300px 0px")
-
-    }, [])
-
-    const { ref, inView } = useInView({
-        rootMargin: root,
-    })
-
-    useEffect(() => {
-
-        console.log('inviex', inView, dataInd)
-        inView && setCount(dataInd)
-        setChange(dataInd)
-
-    }, [inView, change])
-
-    return <div className={`${inView} events`} ref={ref}>
+    return <div className='events'>
 
         <div className='bubles'>
             {bubbles.map((bubble, index) => {

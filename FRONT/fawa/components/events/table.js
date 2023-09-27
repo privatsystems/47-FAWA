@@ -19,7 +19,7 @@ const Table = ({ table }) => {
             <div>Date</div>
             {!mob && <div>Horaires</div>}
             <div>Événement</div>
-            <div>Prix</div>
+            {!mob && <div>Prix</div>}
         </div>
         {table.table_content.map((line, index) => {
             return <TableLine

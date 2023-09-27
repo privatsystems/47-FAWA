@@ -13,7 +13,7 @@ $radius: 30px;
     }
 
     .buble_text {
-    
+
         // opacity: 0;
         width: calc(100% - (var(--margin) * 2));
         margin: var(--verticalmargin) var(--margin);
@@ -24,7 +24,7 @@ $radius: 30px;
             margin: calc(var(--smallmargin)) var(--margin);
 
         }
-    
+
         p {
 
             font-size: var(--size_big);
@@ -32,7 +32,7 @@ $radius: 30px;
             font-weight: 1;
 
             color: var(--color);
-            
+
             width: fit-content;
             display: inline;
             font-weight: 500;
@@ -41,6 +41,7 @@ $radius: 30px;
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
             // filter: url('#instagram');
+            //16px 20px 6px 20px;
 
             transition: background-color 0.3s ease;
 
@@ -62,7 +63,7 @@ $radius: 30px;
                     border-radius: 10px;
 
                 }
-                
+
             }
 
 
@@ -98,7 +99,7 @@ $radius: 30px;
             }
 
         }
-    
+
     }
 
     .images {
@@ -132,52 +133,53 @@ $radius: 30px;
             }
 
             &.med {
-                
+
                 width: calc(50% - var(--smallmargin));
 
                 img {
 
                     width: 100%;
                     height: auto
-                    
                 }
 
             }
 
             &.large {
 
-                    width: 80%;
-                    margin: auto;
-                
-                    img {
+                width: 80%;
+                margin: auto;
 
-                        width: 100%;
-                        height: auto;
-                        
-                    }
+                img {
+
+                    width: 100%;
+                    height: auto;
+
+                }
 
             }
 
             @include sizeone {
 
-                width: 100%!important;
+                width: 100% !important;
                 padding: 0px 0px;
                 margin: 0px;
-                margin-top: var(--margin)!important;
-    
+                margin-top: var(--margin) !important;
+
             }
 
             img {
 
                 width: auto;
                 height: auto;
-    
+
             }
 
             &:nth-child(2n) {
 
-                img { border-radius: 25px;}
-    
+                img {
+                    border-radius: 25px;
+                }
+
             }
 
             p {
@@ -207,6 +209,19 @@ $radius: 30px;
             }
 
         }
+
+    }
+
+}
+
+.firefox .content .buble_text p strong,
+.android .content .buble_text p strong {
+
+    padding: 16px 20px 6px 20px;
+
+    @include sizeone {
+
+        padding: 7px 7px 5px 7px;
 
     }
 
