@@ -14,6 +14,7 @@
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "gsap": "^3.11.3",
+    "intersection-observer": "^0.12.2",
     "next": "13.0.6",
     "react": "18.2.0",
     "react-device-detect": "^2.2.3",

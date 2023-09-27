@@ -13,7 +13,7 @@ import Contacts from '../components/contacts'
 
 export default function Home({ data }) {
 
-  const { apropos, restaurant, events, contacts, infos } = data 
+  const { apropos, restaurant, events, contacts, infos } = data
   const [topTopH, setTop] = useState(1)
   const [bottomTopH, setBottom] = useState(1)
   const [wHeight, setHeight] = useState(764)
@@ -37,8 +37,8 @@ export default function Home({ data }) {
   useEffect(() => {
 
     window?.innerWidth < 800
-    ? setMob(true)
-    : setMob(false)
+      ? setMob(true)
+      : setMob(false)
 
   }, [])
 
@@ -62,21 +62,21 @@ export default function Home({ data }) {
     const scroll = container?.getBoundingClientRect().top * -1
     const limit = container?.getBoundingClientRect().height
 
-    if(scroll >= limit - windowHeight - 2) {
+    if (scroll >= limit - windowHeight - 2) {
 
-      window.scrollTo({top: 6, left: 0})
+      window.scrollTo({ top: 6, left: 0 })
       count + 1 <= partsArray.length
-      ? setCount(count + 1)
-      : setCount(1)
+        ? setCount(count + 1)
+        : setCount(1)
 
     }
 
-    if(scroll < 2) {
+    if (scroll < 2) {
 
-      window.scrollTo({top: limit - windowHeight - 6, left: 0})
+      window.scrollTo({ top: limit - windowHeight - 6, left: 0 })
       count - 1 >= 1
-      ? setCount(count - 1)
-      : setCount(partsArray.length)
+        ? setCount(count - 1)
+        : setCount(partsArray.length)
 
     }
 
@@ -94,47 +94,47 @@ export default function Home({ data }) {
 
       <main id="content" ref={content}>
         <section className="page home smooth-scroll" data-namespace="home" data-menu='home' dir="ltr">
-            <div className='part top' ref={top}>
-                <div 
-                className="sub_wrapper"
-                style= {{
-                  transform: mob ? `scaleY(${(topTopH - wHeight) / wHeight * -1 * 4})` :`scaleY(${(topTopH - wHeight) / wHeight * -1})`,
-                  transformOrigin: '50% 0% 0px',
-                  height: mob ? '25.7vh': '100vh',
-                }}
-                >
-                  <div><Fa /></div>
-                  <div><Wa /></div>
-                </div>
+          <div className='part top' ref={top}>
+            <div
+              className="sub_wrapper"
+              style={{
+                transform: mob ? `scaleY(${(topTopH - wHeight) / wHeight * -1 * 4})` : `scaleY(${(topTopH - wHeight) / wHeight * -1})`,
+                transformOrigin: '50% 0% 0px',
+                height: mob ? '25.7vh' : '100vh',
+              }}
+            >
+              <div><Fa /></div>
+              <div><Wa /></div>
             </div>
-            <div className='content'>
-              {count == 1 && <Apropos data={apropos}/>}
-              {count == 2 && <Restaurant data={restaurant}/>}
-              {count == 3 && <Events data={events}/>}
-              {count == 4 && <Contacts data={contacts}/>}
+          </div>
+          <div className='content'>
+            {count == 1 && <Apropos data={apropos} />}
+            {count == 2 && <Restaurant data={restaurant} />}
+            {count == 3 && <Events data={events} />}
+            {count == 4 && <Contacts data={contacts} />}
+          </div>
+          <div className='part bot' ref={bottom}>
+            <div
+              className="sub_wrapper"
+              style={{
+                transform: mob ? `scaleY(${(bottomTopH - wHeight) / wHeight * -1 * 4})` : `scaleY(${(bottomTopH - wHeight) / wHeight * -1})`,
+                height: mob ? '25.7vh' : '100vh',
+                transformOrigin: mob ? '100% 100% 0px' : '50% 100% 0px',
+              }}>
+              <div><Fa /></div>
+              <div><Wa /></div>
             </div>
-            <div className='part bot' ref={bottom}>
-                <div 
-                className="sub_wrapper"
-                style={{
-                  transform: mob ? `scaleY(${(bottomTopH - wHeight) / wHeight * -1 * 4})` :`scaleY(${(bottomTopH - wHeight) / wHeight * -1})`,
-                  height: mob ? '25.7vh': '100vh',
-                  transformOrigin: mob ? '100% 100% 0px' : '50% 100% 0px',
-                }}>
-                  <div><Fa /></div>
-                  <div><Wa /></div>
-                </div>
-            </div>
+          </div>
         </section>
       </main>
-      <Navigation count={count} infos={infos} setCount={setCount}/>
+      <Navigation count={count} infos={infos} setCount={setCount} />
       <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
-            <filter id="instagram">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />    
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 90 -10" result="goo" />
-                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-            </filter>
+          <filter id="instagram">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 90 -10" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+          </filter>
         </defs>
       </svg>
     </div>
@@ -143,15 +143,15 @@ export default function Home({ data }) {
 
 export const getServerSideProps = async () => {
 
-  try{
+  try {
     // const site = await axios.get(`http://localhost:8080/${locale}/home.json`)
-    const site = await fetch(`https://fawa.privat.systems/home.json`)
+    const site = await fetch(`https://back.fawa-wafa.org/home.json`)
       .then((response) => {
         return response.json()
-    })
+      })
 
     return {
-      props: { 
+      props: {
         data: site,
       }
     };
@@ -159,6 +159,6 @@ export const getServerSideProps = async () => {
   } catch (error) {
     return (console.error('Home.getServerSideProps.erroooooor', error))
   }
-  
+
 }
 

@@ -6,10 +6,10 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      'fawa.privat.systems', 'privat.systems', 'localhost'
+      'fawa-wafa.org', 'back.fawa-wafa.org', 'localhost'
     ],
     deviceSizes: [640, 750, 1080, 1200, 1920, 2048],
-    },
+  },
 }
 
 module.exports = nextConfig

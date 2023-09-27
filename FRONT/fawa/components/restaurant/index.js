@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { InView, useInView } from "react-intersection-observer"
+import { useInView } from "react-intersection-observer"
 import ImageWrapper from "../modules/imageWrapper"
 import TextBubble from "../modules/textBubble"
 
@@ -17,8 +17,7 @@ const Restaurant = ({ data, setCount, dataInd, change, setChange }) => {
 
     }, [])
 
-    const { ref, inView, entry } = useInView({
-        /* Optional options */
+    const { ref, inView } = useInView({
         rootMargin: root,
     });
 
