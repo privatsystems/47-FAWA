@@ -27,6 +27,8 @@ export default function Home({ data }) {
 
   useEffect(() => {
 
+    console.log(seo)
+
     window.addEventListener('scroll', handleScroll)
 
     return () => {
@@ -95,18 +97,18 @@ export default function Home({ data }) {
     <div className={styles.container}>
 
       <Head>
-        <title>{seo.title_site} | {seo.base_site}</title>
+        <title>{seo.title_site + " | " + seo.base_site}</title>
         <meta
           name="format-detection"
           content="telephone=no, date=no, email=no, address=no"
         />
         <meta name="og:title" content={seo.title_site + "|" + seo.base_site} />
-        <meta name="description" content={seo.description_seo} />
-        <meta name="og:description" content={seo.description_seo} />
+        <meta name="description" content={seo.description} />
+        <meta name="og:description" content={seo.description} />
         <meta property="og:url" content="https://fawa-wafa.org" />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:site_name" content={seo.title_site} />
-        <meta property="og:image" content={seo.image_seo} />
+        <meta property="og:image" content={seo.image_seo.value} />
         <meta property="og:type" content='website' />
       </Head>
 
