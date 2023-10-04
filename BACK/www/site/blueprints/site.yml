@@ -82,6 +82,11 @@ tabs:
                   type: date
                   display: DD MMM YYYY
                   width: 1/4
+                date_e: 
+                  label: Date de fin
+                  type: date
+                  display: DD MMM YYYY
+                  width: 1/4
                 horaire:
                   label: Horaires
                   type: text
