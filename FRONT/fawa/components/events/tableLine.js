@@ -3,7 +3,7 @@ import { fr } from 'date-fns/locale'
 import { useEffect, useState } from 'react'
 
 const TableLine = ({ line }) => {
-    const { name, horaire, type, date, link, prix } = line;
+    const { name, horaire, type, date, link, prix, datef } = line;
     const [mob, setMob] = useState(false);
     const today = Date.now();
     const dateEvent = new Date(date);
@@ -31,26 +31,28 @@ const TableLine = ({ line }) => {
                 <div className='event_table_line'>
                     <div>
                         {date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
+                        {datef && format(new Date(datef), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
                     </div>
                     {!mob && <div>{horaire && horaire}</div>}
                     <div>
                         {name && name}
                         {type && <span className='type'>{type}</span>}
-                        {!mob && prix && <div>{prix}</div>}
                     </div>
+                    {!mob && prix && <div>{prix}</div>}
                 </div>
             </a>
         ) : (
             <div className='event_table_line'>
                 <div>
                     {date && format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
+                    {datef && format(new Date(datef), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}
                 </div>
                 {!mob && <div>{horaire && horaire}</div>}
                 <div>
                     {name && name}
                     {type && <span className='type'>{type}</span>}
-                    {prix && <div>{prix}</div>}
                 </div>
+                {!mob && prix && <div>{prix}</div>}
             </div>
         )}
     </>);
