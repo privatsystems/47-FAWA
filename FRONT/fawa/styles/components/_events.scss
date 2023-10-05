@@ -28,7 +28,7 @@ $p100 : calc((100vw - (var(--margin) * 2)) / 100);
         &_line {
 
             display: grid;
-            grid-template-columns: calc($p100 * 10) calc($p100 * 17) calc($p100 * 63) calc($p100 * 10);
+            grid-template-columns: calc($p100 * 13) calc($p100 * 17) calc($p100 * 60) calc($p100 * 10);
             padding: 5px;
             color: var(--color);
             border-bottom: 2px solid var(--color);
