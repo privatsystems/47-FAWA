@@ -30,7 +30,7 @@ const TableLine = ({ line }) => {
             <a href={link} target="_blank" rel="noreferrer">
                 <div className='event_table_line'>
                     {!datef && date && <div>{format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>}
-                    {datef && <div>{format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })} / {format(new Date(datef), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>}
+                    {datef && <div>{format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })} /<br />{format(new Date(datef), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>}
                     {!mob && <div>{horaire && horaire}</div>}
                     <div>
                         {name && name}
@@ -42,7 +42,7 @@ const TableLine = ({ line }) => {
         ) : (
             <div className='event_table_line'>
                 {!datef && date && <div>{format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>}
-                {datef && <div>{format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })} / {format(new Date(datef), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>}
+                {datef && <div>{format(new Date(date), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })} /<br />{format(new Date(datef), 'EEEEE dd.MM', { awareOfUnicodeTokens: true, locale: fr })}</div>}
                 {!mob && <div>{horaire && horaire}</div>}
                 <div>
                     {name && name}

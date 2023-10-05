@@ -82,7 +82,7 @@ tabs:
                   type: date
                   display: DD MMM YYYY
                   width: 1/4
-                date_e: 
+                date_f: 
                   label: Date de fin
                   type: date
                   display: DD MMM YYYY
