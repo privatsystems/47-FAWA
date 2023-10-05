@@ -3,13 +3,19 @@ import TableLine from "./tableLine"
 
 const Table = ({ table }) => {
 
-    const [mob, setMob] = useState(false)
-
+    const [mob, setMob] = useState(false);
     useEffect(() => {
-        window.innerWidth < 900
-            ? setMob(true)
-            : setMob(false)
-    }, [])
+        const handleResize = () => {
+            setMob(window.innerWidth < 900);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Initial check on component mount
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return <div className='event_table'>
         <h3>
@@ -19,7 +25,7 @@ const Table = ({ table }) => {
             <div>Date</div>
             {!mob && <div>Horaires</div>}
             <div>Événement</div>
-            {!mob && <div>Prix</div>}
+            <div>Prix</div>
         </div>
         {table.table_content.map((line, index) => {
             return <TableLine

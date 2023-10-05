@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react'
 
 const TableLine = ({ line }) => {
     const { name, horaire, type, date, link, prix, datef } = line;
-    const [mob, setMob] = useState(false);
+
     const today = Date.now();
     const dateEvent = new Date(date);
 
+    const [mob, setMob] = useState(false);
     useEffect(() => {
         const handleResize = () => {
             setMob(window.innerWidth < 900);
         };
-        console.log(link);
 
         window.addEventListener('resize', handleResize);
         handleResize(); // Initial check on component mount
@@ -20,7 +20,6 @@ const TableLine = ({ line }) => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-
     }, []);
 
     if (isAfter(today, dateEvent)) return null;
@@ -36,7 +35,7 @@ const TableLine = ({ line }) => {
                         {name && name}
                         {type && <span className='type'>{type}</span>}
                     </div>
-                    {!mob && prix && <div>{prix}</div>}
+                    {prix && <div>{prix}</div>}
                 </div>
             </a>
         ) : (
@@ -48,7 +47,7 @@ const TableLine = ({ line }) => {
                     {name && name}
                     {type && <span className='type'>{type}</span>}
                 </div>
-                {!mob && prix && <div>{prix}</div>}
+                {prix && <div>{prix}</div>}
             </div>
         )}
     </>);
