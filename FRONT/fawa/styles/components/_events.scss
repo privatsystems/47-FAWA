@@ -67,6 +67,7 @@ $p100 : calc((100vw - (var(--margin) * 2)) / 100);
                 margin: 5px 15px;
                 position: relative;
                 top: -2px;
+                white-space: nowrap;
 
                 @include sizeone {
 
