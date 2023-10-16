@@ -1,4 +1,4 @@
-import { format, isAfter } from 'date-fns'
+import { format, isAfter, addDays } from 'date-fns'
 import { fr } from 'date-fns/locale'
 import { useEffect, useState } from 'react'
 
@@ -6,8 +6,8 @@ const TableLine = ({ line }) => {
     const { name, horaire, type, date, link, prix, datef } = line;
 
     const today = Date.now();
-    const dateEvent = new Date(date);
-    const dateEnd = new Date(datef);
+    const dateEvent = addDays(new Date(date), 1);
+    const dateEnd = addDays(new Date(datef), 1);
 
     const [mob, setMob] = useState(false);
     useEffect(() => {
