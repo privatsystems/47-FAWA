@@ -7,6 +7,7 @@ const TableLine = ({ line }) => {
 
     const today = Date.now();
     const dateEvent = new Date(date);
+    const dateEnd = new Date(datef);
 
     const [mob, setMob] = useState(false);
     useEffect(() => {
@@ -22,7 +23,12 @@ const TableLine = ({ line }) => {
         };
     }, []);
 
-    if (isAfter(today, dateEvent)) return null;
+    if (datef) {
+        if (isAfter(today, dateEnd)) return null;
+    } else {
+        if (isAfter(today, dateEvent)) return null;
+    }
+
 
     return (<>
         {link ? (
